@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.onlinepathshala">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:label="Other Students"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            android:name=".Authority.All_UnAssign_Student"></activity>
+        <activity
+            android:name=".Authority.Teacher_Evaluation_Question"
+            android:label="Teacher Evaluation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Result_Form_Configuration2"
+            android:label="Result Upload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.All_Student2"
+            android:label="All Students"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.Attendence_History_Canlander_View_For_Teacher"
+            android:label="Attendance History"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Teacher.Attendance_Approval_View" />
+        <activity
+            android:name=".Teacher.My_Classes_Teacher"
+            android:label="My Classes"
+            android:screenOrientation="portrait"
+            android:theme="@style/action_bar" />
+        <activity android:name=".Authority.Edit_Assign_Teacher" />
+        <activity
+            android:name=".Authority.Notice_Upload"
+            android:label="Upload Notice"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Attendence_History_Canlander_View_For_Authority"
+            android:label="Attendance History"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.Attendance_View_For_Teacher"
+            android:label="Attendance History"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Edit_Exam"
+            android:label="Edit Exam"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.All_Exam"
+            android:label="All Exam"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admin.School_Profile"
+            android:label="Authority Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.Teacher_Transaction"
+            android:label="Transaction"
+            android:screenOrientation="landscape"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Teacher.Notification_For_Teacher"
+            android:label="Notifications" />
+        <activity
+            android:name=".Teacher.All_Home_Task"
+            android:label="Home Task"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.All_Sections_for_teacher"
+            android:label="All Sections"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.Teacher_Classes_For_Attendence"
+            android:label="Bangla Medium"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.View_Result2"
+            android:label="View Result" />
+        <activity
+            android:name=".Teacher.Routine_View"
+            android:label="Routine"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher.Teacher_Profile"
+            android:label="Profile"
+            android:theme="@style/admin_toolbar_theme" />
+        <activity
+            android:name=".Account_Deactive_Message"
+            android:label="Account De-activated"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Assign_Subject_List_Activity2"
+            android:label="Assign Teacher" />
+        <activity
+            android:name=".Authority.All_Subject_Activity"
+            android:label="All Subjects" />
+        <activity
+            android:name=".Stuff.Stuff_profile"
+            android:label="Profile" />
+        <activity
+            android:name=".Profile_View"
+            android:label="Profile" />
+        <activity android:name=".Authority.Add_ModeratorActivity" />
+        <activity
+            android:name=".Stuff.Stuff_Dashboard"
+            android:label="Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Accountant.Notice_View"
+            android:label="Notice"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Accountant.Accountant_Contact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Accountant.Accountant_Profiile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Accountant.Transaction2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Accountant.Accountant_Dashboard"
+            android:label="Accountant"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.System_Configuration"
+            android:label="System Configuration"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Student_Profile_For_View"
+            android:label="Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:windowSoftInputMode="stateHidden"
+            android:name=".Authority.All_Student_In_A_Section"
+            android:label="All Students"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Add_Student_Via_Pdf"
+            android:screenOrientation="landscape"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".Authority.All_Sections"
+            android:label="All Sections"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Result_Edit"
+            android:label="Edit Result"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Exam_Wise_Result"
+            android:screenOrientation="landscape"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Authority.Result_For_Authority"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.All_Student_In_A_Section_For_Result"
+            android:label="Result"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Student.Other_Result"
+            android:label="Result"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Edit_Transaction"
+            android:label="Edit Transaction"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Authority.Upload_Routine"
+            android:label="Upload Routine"
+            android:screenOrientation="portrait"
+            android:theme="@style/action_bar2" />
+        <activity
+            android:name=".Choose_Class"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Create_Exam"
+            android:label="Create Exam"
+            android:screenOrientation="portrait"
+            android:theme="@style/action_bar" />
+        <activity
+            android:name=".Transaction_Edit"
+            android:label="Edit Transaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/action_bar" />
+        <activity
+            android:name=".Transaction_History_For_Authority"
+            android:screenOrientation="landscape"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Authority.Other_Transaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Authority.Stuff_Salary"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Authority.Teacher_Salary"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Authority.Student_Fees"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Student.Attendence_History_Canlander_View"
+            android:label="Attendence Summary"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Student.Attendence_History"
+            android:screenOrientation="landscape"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Test"
+            android:theme="@style/action_bar"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".Teacher.Teacher_Contact"
+            android:screenOrientation="portrait"
+            android:theme="@style/action_bar" />
+        <activity
+            android:name=".Profile_View_Only"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Student.Final_Result"
+            android:label="Result"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Teacher.Assign_HomeTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/admin_toolbar_theme2.NoActionBar" />
+        <activity
+            android:name=".Text"
+            android:fitsSystemWindows="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Student.Teacher_Evaluation"
+            android:label="Teacher Evaluation"
+            android:screenOrientation="portrait"
+            android:theme="@style/admin_toolbar_theme2" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".Payment"
+            android:label="Payment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authority.Messenger"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme4.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Student.Student_Panel"
+            android:label="Eduate"
+            android:screenOrientation="portrait"
+            android:theme="@style/admin_toolbar_theme2.NoActionBar" />
+        <activity
+            android:name=".Teacher.Publish_Result"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Teacher.Result_Form_Configuration"
+            android:label="Upload Result"
+            android:screenOrientation="portrait"
+            android:theme="@style/action_bar" />
+        <activity
+            android:name=".Teacher.Attendence"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/admin_toolbar_theme" />
+        <activity
+            android:name=".Teacher.Teacher_Dashboard"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/admin_toolbar_theme" />
+        <activity
+            android:name=".Authority.Assign_Subject"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".Authority.Add_New_Student"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".Authority.Add_New_Teacher"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".Admin.Add_School"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".Authority.Principal_Panel"
+            android:screenOrientation="portrait"
+            android:theme="@style/mytheme.NoActionBar" />
+        <activity
+            android:name=".Admin.Admin_Panel"
+            android:screenOrientation="portrait"
+            android:theme="@style/admin_toolbar_theme" />
+        <activity
+            android:name=".Admin.Log_In"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FirebaseMessagingService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FloatingViewService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".All_Notification_Service"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
+    android:background="#5C1515"
+    tools:context=".Create_Exam">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:weightSum="6"
+            android:background="#5C1515"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="7.2"
+                android:layout_margin="15dp"
+                android:orientation="vertical"
+                android:layout_height="600dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".8"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/exam_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/exam_name"
+                    android:layout_weight=".7"
+                    android:hint="Exam Name"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:fontFamily="serif"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_back3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                </EditText>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".8"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/subject"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+                <EditText
+                    android:id="@+id/topic_name"
+                    android:layout_weight=".7"
+                    android:hint="Exam Topic"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:fontFamily="serif"
+                    android:inputType="text"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_back3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                </EditText>
+                <EditText
+                    android:id="@+id/marks"
+                    android:layout_weight=".7"
+                    android:hint="Total Marks"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:fontFamily="serif"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_back3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                </EditText>
+
+                <LinearLayout
+                    android:layout_below="@+id/toolbar"
+                    android:id="@+id/time"
+                    android:layout_weight="1.6"
+                    android:weightSum="4"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:padding="6dp"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:text="Date:"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/day"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:np_dividerColor="@color/white"
+                        app:np_height="160dp"
+                        app:np_max="30"
+                        app:np_min="1"
+                        app:np_dividerDistance="40dp"
+                        android:layout_weight=".8"
+                        app:np_selectedTextColor="@color/white"
+                        app:np_selectedTextSize="22sp"
+                        app:np_textColor="@color/white"
+                        app:np_textSize="22sp"
+                        app:np_value="3"
+                        app:np_width="64dp" />
+
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/month"
+                        android:layout_width="0dp"
+                        android:layout_weight=".8"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        app:np_dividerColor="@color/white"
+                        app:np_height="160dp"
+                        app:np_max="59"
+                        app:np_min="00"
+                        app:np_dividerDistance="40dp"
+                        app:np_selectedTextColor="@color/white"
+                        app:np_selectedTextSize="22sp"
+                        app:np_textColor="@color/white"
+                        app:np_textSize="22sp"
+                        app:np_value="3"
+                        app:np_width="64dp" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/year"
+                        android:layout_width="0dp"
+                        android:layout_weight=".8"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        app:np_dividerDistance="40dp"
+                        app:np_dividerColor="@color/white"
+                        app:np_height="160dp"
+                        app:np_max="1"
+                        app:np_min="0"
+                        app:np_selectedTextColor="@color/white"
+                        app:np_selectedTextSize="22sp"
+                        app:np_textColor="@color/white"
+                        app:np_textSize="22sp"
+                        app:np_value="2"
+                        app:np_width="64dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_below="@+id/toolbar"
+                    android:id="@+id/d"
+                    android:background="@drawable/border_back"
+                    android:layout_weight="1.6"
+                    android:weightSum="4"
+                    android:padding="6dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:text="Time:"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/hour"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:np_dividerColor="@color/white"
+                        app:np_height="160dp"
+                        app:np_dividerDistance="40dp"
+                        app:np_max="59"
+                        app:np_min="0"
+                        android:layout_weight=".8"
+                        app:np_selectedTextColor="@color/white"
+                        app:np_selectedTextSize="24sp"
+                        app:np_textColor="@color/white"
+                        app:np_textSize="22sp"
+                        app:np_value="3"
+                        app:np_width="64dp" />
+
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/minutes"
+                        android:layout_width="0dp"
+                        android:layout_weight=".8"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        app:np_dividerColor="@color/white"
+                        app:np_height="160dp"
+                        app:np_dividerDistance="40dp"
+                        app:np_max="59"
+                        app:np_min="00"
+                        app:np_selectedTextColor="@color/white"
+                        app:np_selectedTextSize="24sp"
+                        app:np_textColor="@color/white"
+                        app:np_textSize="22sp"
+                        app:np_value="3"
+                        app:np_width="64dp" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/daypart"
+                        android:layout_width="0dp"
+                        android:layout_weight=".8"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        app:np_dividerColor="@color/white"
+                        app:np_height="160dp"
+                        app:np_dividerDistance="40dp"
+                        app:np_max="1"
+                        app:np_min="0"
+                        app:np_selectedTextColor="@color/white"
+                        app:np_selectedTextSize="24sp"
+                        app:np_textColor="@color/white"
+                        app:np_textSize="22sp"
+                        app:np_value="2"
+                        app:np_width="64dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_back"
+                    android:onClick="submit"
+                    android:text="SUBMIT"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                    android:textColor="@color/white"
+                    android:textSize="18sp">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

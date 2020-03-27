@@ -1,0 +1,66 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="15dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                app:type="one_day_picker"
+                android:layout_height="400dp"
+                app:eventsEnabled="true"
+                app:headerColor="#83440D"
+                app:highlightedDaysLabelsColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionColor="#974F10">
+
+
+
+            </com.applandeo.materialcalendarview.CalendarView>
+
+            <Button
+
+                android:layout_width="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="27dp"
+                android:background="#83440D">
+
+            </Button>
+            <Button
+                android:id="@+id/linearLayout2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="27dp"
+                android:background="#83440D"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

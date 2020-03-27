@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5C1515"
+    android:orientation="vertical"
+    android:weightSum="8"
+    android:padding="10dp"
+    tools:context=".Authority.Assign_Subject">
+
+
+    <LinearLayout
+        android:layout_weight="2.5"
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight="1"
+            android:background="@drawable/edit_back3"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/teacher_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/d"
+        android:layout_weight="1.6"
+        android:weightSum="4"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Time:"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/hour"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:np_dividerColor="@color/white"
+            app:np_height="180dp"
+            app:np_max="59"
+            app:np_min="0"
+            android:layout_weight="1"
+            app:np_selectedTextColor="@color/white"
+            app:np_selectedTextSize="24sp"
+            app:np_textColor="@color/white"
+            app:np_textSize="24sp"
+            app:np_value="3"
+            app:np_width="64dp" />
+
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/minutes"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            app:np_dividerColor="@color/white"
+            app:np_height="180dp"
+            app:np_max="59"
+            app:np_min="00"
+            app:np_selectedTextColor="@color/white"
+            app:np_selectedTextSize="24sp"
+            app:np_textColor="@color/white"
+            app:np_textSize="24sp"
+            app:np_value="3"
+            app:np_width="64dp" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/daypart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            app:np_dividerColor="@color/white"
+            app:np_height="180dp"
+            app:np_max="1"
+            app:np_min="0"
+            app:np_selectedTextColor="@color/white"
+            app:np_selectedTextSize="24sp"
+            app:np_textColor="@color/white"
+            app:np_textSize="24sp"
+            app:np_value="2"
+            app:np_width="64dp" />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:textColorHint="#1D5A8F"
+        android:layout_weight=".8"
+        android:background="@drawable/edit_back3"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_weight="1.6"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Day:"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/day"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:np_dividerColor="@color/white"
+            app:np_height="180dp"
+            app:np_max="59"
+            app:np_min="0"
+            app:np_selectedTextColor="@color/white"
+            app:np_selectedTextSize="24sp"
+            app:np_textColor="@color/white"
+            app:np_textSize="19sp"
+            app:np_value="3"
+            app:np_width="64dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_weight="1.5"
+        android:layout_height="0dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:layout_weight=".7"
+            android:background="@drawable/signupbutton"
+            android:onClick="submit"
+            android:text="SUBMIT"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="@color/white"
+            android:textSize="18sp">
+
+        </Button>
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

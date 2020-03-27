@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="250dp"
+    android:weightSum="2"
+    android:layout_height="30dp">
+
+
+    <EditText
+        android:id="@+id/student_id"
+        android:background="@drawable/table_cell"
+        android:layout_width="0dp"
+        android:textSize="12sp"
+        android:inputType="numberDecimal"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:imeOptions="flagNoFullscreen"
+        android:layout_height="match_parent">
+    </EditText>
+    <EditText
+        android:id="@+id/student_name"
+        android:layout_width="0dp"
+        android:textSize="12sp"
+        android:background="@drawable/table_cell"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:imeOptions="flagNoFullscreen"
+        android:layout_height="match_parent">
+    </EditText>
+
+</LinearLayout>

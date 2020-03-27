@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_more"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/setting2"
+        android:title="">
+        <menu>
+
+            <item
+                android:id="@+id/change_profile"
+                android:icon="@drawable/man"
+                android:title="change profile picture" />
+            <item
+                android:id="@+id/change_name"
+                android:icon="@drawable/adduser"
+                android:title="change username" />
+            <item
+                android:id="@+id/change_email"
+                android:icon="@drawable/email2"
+                android:title="change email" />
+            <item
+                android:id="@+id/change_number"
+                android:icon="@drawable/viber"
+                android:title="change phone number" />
+            <item
+                android:id="@+id/notification"
+                android:icon="@drawable/notification3"
+                android:title="notification on/off" />
+        </menu>
+
+    </item>
+
+</menu>

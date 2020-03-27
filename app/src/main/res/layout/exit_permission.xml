@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="300dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:background="#944304"
+            android:text="Exit?"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_height="80dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/message"
+            android:text="Do You Want To Exit?"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#172266"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+        </TextView>
+        <View
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="#A7A1A1"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="1dp">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:padding="5dp"
+            android:layout_height="55dp">
+            <Button
+                android:id="@+id/no"
+                android:background="@drawable/editback2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="16dp"
+                android:text="No"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="16dp"
+                android:backgroundTint="@color/blue"
+                android:layout_height="match_parent">
+            </Button>
+            <Button
+                android:id="@+id/yes"
+                android:background="@drawable/editback2"
+                android:layout_width="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="Yes"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="#8B2709"
+                android:layout_marginLeft="16dp"
+                android:layout_height="match_parent">
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

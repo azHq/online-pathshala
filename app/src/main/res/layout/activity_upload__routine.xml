@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5C1515"
+    android:orientation="vertical"
+    android:weightSum="9"
+    android:padding="10dp"
+    tools:context=".Teacher.Result_Form_Configuration">
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="7"
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight=".9"
+            android:background="@drawable/border_back"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/medium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:theme="@style/SelectedItemWhite"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:clickable="false"
+                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                android:backgroundTint="@color/white" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight=".9"
+            android:background="@drawable/border_back"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/class_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:clickable="false"
+                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                android:backgroundTint="@color/white" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight=".9"
+            android:background="@drawable/border_back"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/section"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:theme="@style/SelectedItemWhite"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:clickable="false"
+                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                android:backgroundTint="@color/white" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight=".9"
+            android:background="@drawable/border_back"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/routine_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:theme="@style/SelectedItemWhite"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:clickable="false"
+                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                android:backgroundTint="@color/white" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/exam_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight=".9"
+            android:background="@drawable/border_back"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/exam_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:clickable="false"
+                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                android:backgroundTint="@color/white" />
+
+        </RelativeLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="20dp"
+            android:layout_weight=".9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+
+            <Button
+                android:id="@+id/file_chooser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/border_back"
+                android:onClick="choose_file"
+                android:paddingLeft="10dp"
+                android:text="Choose File"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/routine"
+                app:layout_constrainedHeight="true"
+                android:clickable="false"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.23"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </Button>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border_back"
+            android:onClick="submit"
+            android:text="Upload"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="@color/white"
+            android:textSize="18sp">
+        </Button>
+    </LinearLayout>
+
+
+
+</LinearLayout>

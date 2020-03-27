@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="11"
+    android:background="@color/white"
+    tools:context=".Authority.Notice_Upload">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="10"
+        android:weightSum="7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:paddingLeft="5dp"
+            android:gravity="bottom"
+            android:text="Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/title"
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:padding="6dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/editback2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+        </EditText>
+        <TextView
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom"
+            android:text="Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/details"
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:layout_weight="2.6"
+            android:gravity="top"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/editback2"
+            android:layout_width="match_parent"
+            android:minHeight="100dp"
+            android:layout_height="0dp">
+        </EditText>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight="1"
+            android:background="@drawable/editback2"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/choose_shift"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                style="@style/custom_color"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/choose_class"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight="1"
+            android:background="@drawable/editback2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="323dp"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@+id/profile"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="23dp"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:text="Choose Class">
+            </TextView>
+            <ImageView
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/choose_file"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:text="Choose File"
+            android:backgroundTint="#5F0707"
+            android:textColor="@color/white"
+            android:background="@drawable/editback2"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+        </Button>
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_weight=".9"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/editback2"
+            android:layout_width="match_parent"
+            android:backgroundTint="#860C0C"
+            android:text="CANCEL"
+            android:textColor="#FFFFFF"
+            android:layout_height="match_parent">
+
+        </Button>
+        <Button
+            android:id="@+id/confirm"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/editback2"
+            android:backgroundTint="#142191"
+            android:layout_weight="1"
+            android:text="SUBMIT"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

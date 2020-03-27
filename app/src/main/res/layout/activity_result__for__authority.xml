@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/result_back"
+    tools:context=".Authority.Result_For_Authority">
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_margin="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/class_test"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/exam_button_back"
+            android:text="Class Tests"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+        </Button>
+        <Button
+            android:id="@+id/monthly_test"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/exam_button_back"
+            android:text="Monthly Tests"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+        </Button>
+        <Button
+            android:id="@+id/half_yearly"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/exam_button_back"
+            android:text="Half Yearly"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+        </Button>
+        <Button
+            android:id="@+id/final_exam"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/exam_button_back"
+            android:text="Final Exam"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

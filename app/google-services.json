@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1059076249060",
+    "firebase_url": "https://online-pathshala-e8275.firebaseio.com",
+    "project_id": "online-pathshala-e8275",
+    "storage_bucket": "online-pathshala-e8275.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059076249060:android:b83fadc8d1444caaac63f1",
+        "android_client_info": {
+          "package_name": "com.example.onlinepathshala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059076249060-gus6bo0rqtqjj14euh16cupo1cekn2tk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlinepathshala",
+            "certificate_hash": "58c4eef464c06bfa734f12eb1e7115c8190f5a2e"
+          }
+        },
+        {
+          "client_id": "1059076249060-mf0fu925bf5l38gvrhkbe3211ah1cfeo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgNLSoU7xL_IESgFyAnIhoIX2tjft71FA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059076249060-mf0fu925bf5l38gvrhkbe3211ah1cfeo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

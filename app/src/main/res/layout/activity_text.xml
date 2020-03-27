@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".Text">
+
+    <EditText
+        android:id="@+id/device_id"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="556dp"
+        android:background="@drawable/editback3"
+        android:drawableRight="@drawable/react"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Enter Your Message"
+        android:minHeight="46dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/get_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/signupbutton"
+        android:onClick="get_ID"
+        android:text="Get Device Id"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="151dp">
+    </Button>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

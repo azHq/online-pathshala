@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".Authority.Add_Student_Via_Pdf">
+    <LinearLayout
+        android:layout_weight="10"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+            <LinearLayout
+                android:background="@drawable/table_border2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:id="@+id/student_id"
+                        android:text="Student Id"
+                        android:gravity="center"
+                        android:background="@drawable/table_cell"
+                        android:textColor="@color/table_header_text_color"
+                        android:textSize="@dimen/table_header_text_size"
+                        android:textAppearance="@style/table_header_text_style"
+                        android:layout_weight=".9"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/student_name"
+                        android:text="Student Name"
+                        android:gravity="center"
+                        android:background="@drawable/table_cell"
+                        android:textColor="@color/table_header_text_color"
+                        android:textSize="@dimen/table_header_text_size"
+                        android:textAppearance="@style/table_header_text_style"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/email"
+                        android:text="Email"
+                        android:gravity="center"
+                        android:background="@drawable/table_cell"
+                        android:textColor="@color/table_header_text_color"
+                        android:textSize="@dimen/table_header_text_size"
+                        android:textAppearance="@style/table_header_text_style"
+                        android:layout_weight="1.2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/phone_number"
+                        android:text="Phone Number"
+                        android:gravity="center"
+                        android:background="@drawable/table_cell"
+                        android:textColor="@color/table_header_text_color"
+                        android:textSize="@dimen/table_header_text_size"
+                        android:textAppearance="@style/table_header_text_style"
+                        android:layout_weight=".9"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle"
+                        android:scrollbars="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#748674"
+        android:gravity="center_horizontal|bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <Button
+            android:background="@drawable/signupbutton"
+            android:layout_margin="5dp"
+            android:text="SUBMIT"
+            android:onClick="submit"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>

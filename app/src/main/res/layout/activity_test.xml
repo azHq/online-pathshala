@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Authority.Messenger">
+
+   <Button
+       android:id="@+id/create_table"
+       android:text="Create_Table"
+       android:onClick="create_table"
+       android:layout_margin="20dp"
+       android:layout_width="match_parent"
+       android:background="@drawable/editback2"
+       android:backgroundTint="@color/greemdark"
+       android:layout_height="40dp">
+   </Button>
+
+   <Button
+       android:id="@+id/drop_table"
+       android:text="Drop Table"
+       android:onClick="drop_table"
+       android:layout_margin="20dp"
+       android:layout_width="match_parent"
+       android:background="@drawable/editback2"
+       android:backgroundTint="@color/greemdark"
+       android:layout_height="40dp">
+   </Button>
+   <Button
+       android:id="@+id/insert"
+       android:text="Insert"
+       android:onClick="insert"
+       android:layout_margin="20dp"
+       android:layout_width="match_parent"
+       android:background="@drawable/editback2"
+       android:backgroundTint="@color/greemdark"
+       android:layout_height="40dp">
+   </Button>
+   <Button
+       android:id="@+id/update"
+       android:text="Update"
+       android:onClick="update"
+       android:layout_margin="20dp"
+       android:layout_width="match_parent"
+       android:background="@drawable/editback2"
+       android:backgroundTint="@color/greemdark"
+       android:layout_height="40dp">
+   </Button>
+
+   <Button
+       android:onClick="check_num_raws"
+       android:id="@+id/num_raw"
+       android:text="Check Number Of Raws"
+       android:layout_margin="20dp"
+       android:layout_width="match_parent"
+       android:background="@drawable/editback2"
+       android:backgroundTint="@color/greemdark"
+       android:layout_height="40dp">
+   </Button>
+
+   <Button
+       android:onClick="get_all_data"
+       android:id="@+id/get_all_data"
+       android:text="Get All Data"
+       android:layout_margin="20dp"
+       android:layout_width="match_parent"
+       android:background="@drawable/editback2"
+       android:backgroundTint="@color/greemdark"
+       android:layout_height="40dp">
+   </Button>
+
+</LinearLayout>

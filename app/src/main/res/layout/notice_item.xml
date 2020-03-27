@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="#3D035C"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/me"
+            android:background="#00000000"
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="20dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/circle_icon"
+                android:layout_height="20dp">
+            </Button>
+            <Button
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="20dp"
+                android:background="@drawable/circle_icon"
+                android:layout_height="20dp">
+            </Button>
+            <Button
+                android:layout_gravity="bottom|right"
+                android:layout_margin="10dp"
+                android:layout_width="20dp"
+                android:background="@drawable/circle_icon"
+                android:layout_height="20dp">
+            </Button>
+            <Button
+                android:elevation="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:layout_width="20dp"
+                android:background="@drawable/circle_icon"
+                android:layout_height="20dp">
+            </Button>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:text="date"
+                        android:textSize="16sp"
+                        android:textColor="@color/notice_board_text_color"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/title"
+                        android:text="title"
+                        android:textColor="@color/notice_board_text_color"
+                        android:textSize="17sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal|top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/body"
+                        android:text="body"
+                        android:textColor="@color/notice_board_text_color"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp">
+                    </ImageView>
+                    <Button
+                        android:id="@+id/download"
+                        android:textColor="@color/notice_board_text_color"
+                        android:text="Download Pdf"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:background="@drawable/editback2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </Button>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

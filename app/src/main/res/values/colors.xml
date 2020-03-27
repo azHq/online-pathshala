@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#736c6f</color>
+    <color name="blue">#0925d9</color>
+    <color name="white">#FAFAFA</color>
+    <color name="purplelight">#7528c6</color>
+    <color name="purpledeep">#3f0dc5</color>
+    <color name="darkgreen">#198506</color>
+    <color name="greemdark">#05ad43</color>
+    <color name="greendark">#05891b</color>
+    <color name="primary_device_default_light">#478e09</color>
+    <color name="black">#EA0E0D0D</color>
+    <color name="primary_dark_device_default_light">#2b332c</color>
+    <color name="primarydark">#059f09</color>
+    <color name="dark">#07840b</color>
+    <color name="light">@android:color/holo_green_dark</color>
+    <color name="primary_material_dark">#5aac07</color>
+    <color name="textcolor1">#2c2424</color>
+    <color name="coffe">#3E2723</color>
+    <color name="dark_sky">#1D5A8F</color>
+    <color name="left_text">#1C5803</color>
+    <color name="right_text">#585656</color>
+    <color name="home_task_text">#FDFCFC</color>
+    <color name="table_header_text_color">#000000</color>
+    <color name="table_header_text_color2">#000000</color>
+    <color name="table_body_text_color">#000000</color>
+    <color name="attendencehistory_color">#000000</color>
+    <color name="notice_board_text_color">#FAF7F7</color>
+    <color name="de_active_red">#7A772604</color>
+    <color name="active_red">#772604</color>
+    <color name="active_green">#097E05</color>
+    <color name="de_active_green">#92097E05</color>
+</resources>

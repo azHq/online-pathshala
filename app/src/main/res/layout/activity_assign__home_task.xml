@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="11"
+    android:background="@color/white"
+    tools:context=".Teacher.Assign_HomeTask">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="10"
+        android:padding="10dp"
+        android:weightSum="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:paddingLeft="5dp"
+            android:gravity="bottom"
+            android:text="Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/title"
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:padding="6dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/editback2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+        </EditText>
+        <TextView
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:gravity="bottom"
+            android:text="Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/details"
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:layout_weight="2.5"
+            android:gravity="top"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/editback2"
+            android:layout_width="match_parent"
+            android:minHeight="100dp"
+            android:layout_height="0dp">
+        </EditText>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight="1"
+            android:background="@drawable/editback2"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/choose_subject"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                style="@style/custom_color"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/choose_student1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_weight="1"
+            android:background="@drawable/editback2"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/profile2"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp">
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/choose_student2"
+                android:layout_width="323dp"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@+id/profile"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="43dp"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:text="Choose Student">
+            </TextView>
+            <ImageView
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/d"
+            android:layout_weight="2.4"
+            android:weightSum="4"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="6dp"
+            android:background="@drawable/border_back"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.6"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Submission Date:"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <com.shawnlin.numberpicker.NumberPicker
+                android:id="@+id/day"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                app:np_dividerColor="@color/white"
+                app:np_height="160dp"
+                app:np_max="30"
+                app:np_min="1"
+                app:np_dividerDistance="40dp"
+                android:layout_weight=".8"
+                app:np_selectedTextColor="@color/white"
+                app:np_selectedTextSize="22sp"
+                app:np_textColor="@color/white"
+                app:np_textSize="22sp"
+                app:np_value="3"
+                app:np_width="64dp" />
+
+
+            <com.shawnlin.numberpicker.NumberPicker
+                android:id="@+id/month"
+                android:layout_width="0dp"
+                android:layout_weight=".8"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                app:np_dividerColor="@color/white"
+                app:np_height="160dp"
+                app:np_max="59"
+                app:np_min="00"
+                app:np_dividerDistance="40dp"
+                app:np_selectedTextColor="@color/white"
+                app:np_selectedTextSize="22sp"
+                app:np_textColor="@color/white"
+                app:np_textSize="22sp"
+                app:np_value="3"
+                app:np_width="64dp" />
+
+            <com.shawnlin.numberpicker.NumberPicker
+                android:id="@+id/year"
+                android:layout_width="0dp"
+                android:layout_weight=".8"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                app:np_dividerDistance="40dp"
+                app:np_dividerColor="@color/white"
+                app:np_height="160dp"
+                app:np_max="1"
+                app:np_min="0"
+                app:np_selectedTextColor="@color/white"
+                app:np_selectedTextSize="22sp"
+                app:np_textColor="@color/white"
+                app:np_textSize="22sp"
+                app:np_value="2"
+                app:np_width="64dp" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_weight=".9"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/editback2"
+            android:layout_width="match_parent"
+            android:backgroundTint="#860C0C"
+            android:text="CANCEL"
+            android:textColor="#FFFFFF"
+            android:layout_height="match_parent">
+
+        </Button>
+        <Button
+            android:id="@+id/confirm"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/editback2"
+            android:backgroundTint="#142191"
+            android:layout_weight="1"
+            android:text="ASSIGN"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

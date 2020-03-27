@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:weightSum="8"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:background="#C7560B"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Choose Your Subject"
+            android:textColor="#E9DEDE"
+            android:textSize="16sp"
+            android:textStyle="bold">
+        </TextView>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_weight="6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/cancel"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:layout_margin="6dp"
+            android:layout_width="0dp"
+            android:textColor="@color/white"
+            android:background="@drawable/border_back"
+            android:backgroundTint="#691313"
+            android:layout_height="40dp">
+        </Button>
+        <Button
+            android:id="@+id/ok"
+            android:layout_margin="6dp"
+            android:text="Ok"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:background="@drawable/border_back"
+            android:backgroundTint="@color/blue"
+            android:layout_width="0dp"
+            android:layout_height="40dp">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

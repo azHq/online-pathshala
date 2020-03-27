@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/today"
+        app:showAsAction="always"
+        android:title="Today"
+        android:icon="@drawable/class_routine" />
+    <item android:id="@+id/all"
+        android:title="All"
+        android:icon="@drawable/exam_routine" />
+
+</menu>

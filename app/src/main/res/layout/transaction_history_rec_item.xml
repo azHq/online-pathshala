@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="1000dp"
+    android:layout_height="26dp">
+        <TextView
+            android:id="@+id/transaction_id"
+            android:text="T-ID"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color2"
+            android:textSize="@dimen/table_header_text_size2"
+            android:textAppearance="@style/table_header_text_style2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/sender_type"
+            android:text="Sender Type"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="@dimen/table_header_text_size"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/sender_id"
+            android:text="Sender Id"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="@dimen/table_header_text_size"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/receiver_type"
+            android:text="Receiver Type"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color2"
+            android:textSize="@dimen/table_header_text_size2"
+            android:textAppearance="@style/table_header_text_style2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/receiver_id"
+            android:text="Receiver Id"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="@dimen/table_header_text_size"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/fee_type"
+            android:text="Fee Type"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color2"
+            android:textSize="@dimen/table_header_text_size2"
+            android:textAppearance="@style/table_header_text_style2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/transaction_type2"
+            android:text="Transaction Type"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="@dimen/table_header_text_size"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/table_cell"
+            android:gravity="center"
+            android:text="Amount"
+            android:textAppearance="@style/table_header_text_style2"
+            android:textColor="@color/table_header_text_color2"
+            android:textSize="@dimen/table_header_text_size2"></TextView>
+
+        <TextView
+            android:id="@+id/de_cre"
+            android:text="Debit/Credit"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="@dimen/table_header_text_size"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/payment_method"
+            android:text="Payment Method"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color2"
+            android:textSize="@dimen/table_header_text_size2"
+            android:textAppearance="@style/table_header_text_style2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/date"
+            android:text="Date"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="@dimen/table_header_text_size"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:layout_height="match_parent">
+                <Button
+                    android:id="@id/edit"
+                    android:layout_width="30dp"
+                    android:background="@drawable/edit_icon"
+                    android:layout_height="wrap_content">
+
+                </Button>
+        </LinearLayout>
+
+</LinearLayout>

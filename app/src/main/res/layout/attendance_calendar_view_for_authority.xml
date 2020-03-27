@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Authority.Attendence_History_Canlander_View_For_Authority">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <androidx.appcompat.widget.Toolbar
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:gravity="center_vertical"
+                    android:text="Attendence History"
+                    android:fontFamily="serif"
+                    android:textSize="14sp"
+                    android:textColor="@color/blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </TextView>
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <Spinner
+                            android:id="@+id/month"
+                            android:dropDownSelector="@color/coffe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                        </Spinner>
+                        <Spinner
+                            android:id="@+id/year"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                        </Spinner>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Md.Ezazul Haque"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/attendencehistory_color"
+                    android:textSize="14sp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="ID : 23DF48"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/coffe"
+                    android:textSize="14sp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/total_working_day"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/attendencehistory_color"
+                    android:text="Total Working Day: 120 days"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/present"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/attendencehistory_color"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Present: 110 days"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/absent"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/attendencehistory_color"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Absent: 10 days"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/percent"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#8F4D07"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Persentage: 76%"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/recycle"
+        android:dividerHeight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
+</LinearLayout>

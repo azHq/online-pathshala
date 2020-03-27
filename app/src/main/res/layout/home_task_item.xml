@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="#599417"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/home_task_back"
+        android:layout_width="match_parent"
+        android:minHeight="200dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:textColor="@color/home_task_text"
+                    android:fontFamily="serif"
+                    android:gravity="center_horizontal"
+                    android:text="Assign Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+                <TextView
+                    android:id="@+id/assign_date"
+                    android:layout_weight="1"
+                    android:textColor="@color/home_task_text"
+                    android:fontFamily="serif"
+                    android:gravity="center_horizontal"
+                    android:text="09.11.20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Subject"
+                    android:textColor="@color/home_task_text"
+                    android:fontFamily="serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+                <TextView
+                    android:id="@+id/subject_name"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="English"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
+                    android:textColor="@color/home_task_text"
+                    android:fontFamily="serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:textColor="@color/home_task_text"
+                    android:fontFamily="serif"
+                    android:gravity="center_horizontal"
+                    android:text="Submission Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+                <TextView
+                    android:id="@+id/submission_date"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="12.11.20"
+                    android:textColor="@color/home_task_text"
+                    android:fontFamily="serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Title:"
+                android:textColor="@color/home_task_text"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView
+                android:id="@+id/title"
+                android:text="English Home Task"
+                android:textSize="18sp"
+                android:textColor="@color/home_task_text"
+                android:fontFamily="serif"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:background="@color/coffe"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </View>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:backgroundTint="@color/white"
+                android:background="@drawable/home_task_back"
+                android:padding="10dp"
+                android:id="@+id/body"
+                android:layout_margin="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="You have an assign okskskkskkksjjsjskskkskskskskskkskksjsjsjskskskkskskskskskskskskkskskskskskskskkskskskskskskskskskkssjjskskskksskskkskskskskskskskksjksn chapter 5.You have to hsdhjskkskskskkskskkskkskkkskskkskkskskkskskkkskkkskkskkskkskkskkskkskskkkskskkskskkskkskkkskswrite a story traffic jam"
+                android:layout_width="match_parent"
+                android:minHeight="120dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

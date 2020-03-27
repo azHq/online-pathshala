@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/result_back"
+    tools:context=".Accountant.Transaction2">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/student_fee"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/editback2"
+            android:text="Student Fees"
+            android:textSize="24sp"
+            android:backgroundTint="#EDA75A07"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white">
+        </Button>
+        <Button
+            android:id="@+id/teacher_salary"
+            android:layout_margin="20dp"
+            android:text="Teacher Salary"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:backgroundTint="#EDA57F0D"
+            android:layout_width="match_parent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:background="@drawable/editback2"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </Button>
+        <Button
+            android:id="@+id/stuff_salary"
+            android:layout_margin="20dp"
+            android:text="Stuff Salary"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:backgroundTint="#AE77A709"
+            android:layout_width="match_parent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:background="@drawable/editback2"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </Button>
+        <Button
+            android:id="@+id/other_transaction"
+            android:layout_margin="20dp"
+            android:text="Other Transaction"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:backgroundTint="#F0058879"
+            android:layout_width="match_parent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:background="@drawable/editback2"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </Button>
+        <Button
+            android:id="@+id/transaction_history"
+            android:layout_margin="20dp"
+            android:text="Transaction History"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:backgroundTint="#DF044374"
+            android:layout_width="match_parent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:background="@drawable/editback2"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </Button>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

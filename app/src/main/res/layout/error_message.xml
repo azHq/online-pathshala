@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#134714"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:background="#944304"
+        android:text="Delete Item.....?"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_height="80dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/message"
+        android:text="Are You Sure To Delete?"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FCFCFD"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_height="55dp">
+        <Button
+            android:id="@+id/ok"
+            android:background="@drawable/editback2"
+            android:layout_width="180dp"
+            android:layout_weight="1"
+            android:layout_marginRight="16dp"
+            android:text="OK"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="@color/blue"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

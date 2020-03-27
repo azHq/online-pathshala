@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/result_back"
+    tools:context=".Student.Teacher_Evaluation">
+
+    <LinearLayout
+        android:background="#43E7E5E5"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/teacher_id"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="serif"
+            android:text="Teacher Name : "
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/teacher_name"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:fontFamily="serif"
+            android:layout_marginLeft="10dp"
+            android:text="Teacher Id: "
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/no_item"
+        android:text="No Question Still Setup"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</LinearLayout>

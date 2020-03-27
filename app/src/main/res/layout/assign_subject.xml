@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Assign Subject"
+        android:textSize="17sp"
+        android:background="#390970"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_height="60dp">
+    </TextView>
+    <RelativeLayout
+        android:id="@+id/duration_layout"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:textColorHint="#1D5A8F"
+        android:layout_below="@+id/time"
+        android:layout_height="50dp"
+        android:background="@drawable/editback2"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/subject"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:theme="@style/MySpinner"
+            android:spinnerMode="dropdown" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="bottom"
+        android:layout_marginTop="80dp"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="65dp">
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/signupbutton"
+            android:text="Cancel"
+            android:textColor="#fbfafa"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="end"
+            android:layout_height="match_parent"
+            android:background="@drawable/signupbutton"
+            android:text="Assign"
+            android:textColor="#fbfafa"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

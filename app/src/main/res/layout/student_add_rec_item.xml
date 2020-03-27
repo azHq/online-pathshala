@@ -1,0 +1,63 @@
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:weightSum="4"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+        android:id="@+id/student_id"
+        android:text="Student Id"
+        android:gravity="center"
+        android:background="@drawable/table_cell"
+        android:textColor="@color/table_header_text_color"
+        android:textSize="@dimen/table_header_text_size"
+        android:textAppearance="@style/table_header_text_style"
+        android:layout_weight=".9"
+        android:layout_width="0dp"
+        android:inputType="text"
+        android:imeOptions="flagNoFullscreen"
+        android:layout_height="match_parent">
+    </EditText>
+    <EditText
+        android:id="@+id/student_name"
+        android:text="Student Name"
+        android:gravity="center"
+        android:background="@drawable/table_cell"
+        android:textColor="@color/table_header_text_color"
+        android:textSize="@dimen/table_header_text_size"
+        android:inputType="text"
+        android:imeOptions="flagNoFullscreen"
+        android:textAppearance="@style/table_header_text_style"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+    </EditText>
+    <EditText
+        android:id="@+id/email"
+        android:text="Email"
+        android:gravity="center"
+        android:background="@drawable/table_cell"
+        android:textColor="@color/table_header_text_color"
+        android:textSize="@dimen/table_header_text_size"
+        android:textAppearance="@style/table_header_text_style"
+        android:layout_weight="1.2"
+        android:layout_width="0dp"
+        android:inputType="text"
+        android:imeOptions="flagNoFullscreen"
+        android:layout_height="match_parent">
+    </EditText>
+    <EditText
+        android:id="@+id/phone_number"
+        android:text="Phone Number"
+        android:gravity="center"
+        android:inputType="phone"
+        android:imeOptions="flagNoFullscreen"
+        android:background="@drawable/table_cell"
+        android:textColor="@color/table_header_text_color"
+        android:textSize="@dimen/table_header_text_size"
+        android:textAppearance="@style/table_header_text_style"
+        android:layout_weight=".9"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+    </EditText>
+</LinearLayout>

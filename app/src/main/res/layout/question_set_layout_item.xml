@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/set_no"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Qusetion Set No.1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView
+                android:id="@+id/date"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Create At: 12.12.2020"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+            <FrameLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#3C0A68"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"
+                    android:text="Submit"
+                    android:background="@drawable/editback2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
+                </Button>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/add"
+                    android:foregroundGravity="center"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:background="@drawable/red_circle"
+                    app:fabCustomSize="35dp"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/ic_add_black_24dp" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

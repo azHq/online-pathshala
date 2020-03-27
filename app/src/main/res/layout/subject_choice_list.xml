@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="6dp"
+    android:gravity="center"
+    android:layout_height="60dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_height="35dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:src="@drawable/book4"
+            android:layout_height="match_parent">
+        </ImageView>
+        <TextView
+            android:id="@+id/subject_name"
+            android:layout_width="0dp"
+            android:layout_weight="2.8"
+            android:text="Teacher name"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/coffe"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+        </TextView>
+        <CheckBox
+            android:id="@+id/choose_subject"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:backgroundTint="@color/coffe"
+            android:layout_height="match_parent">
+        </CheckBox>
+    </LinearLayout>
+
+    <View
+        android:background="#C4B6B6"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/teacher"
+        android:title="Teacher"
+        app:showAsAction="always"
+        android:icon="@drawable/teacher2" />
+    <item android:id="@+id/authority"
+        android:title="Moderator"
+        app:showAsAction="always"
+        android:icon="@drawable/authority" />
+    <item android:id="@+id/student"
+        android:title="Student"
+        app:showAsAction="always"
+        android:icon="@drawable/authority" />
+    <item android:id="@+id/principal"
+        android:title="Principal"
+        app:showAsAction="always"
+        android:icon="@drawable/principal" />
+
+</menu>

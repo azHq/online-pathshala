@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:clickable="false"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/notification2"/>
+
+    <FrameLayout
+        android:clickable="false"
+        android:id="@+id/view_alert_red_circle"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="top|end"
+        android:background="@drawable/red_circle"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <TextView
+            android:clickable="false"
+            android:id="@+id/view_alert_count_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="9sp"
+            tools:text="99+"/>
+
+    </FrameLayout>
+
+</FrameLayout>

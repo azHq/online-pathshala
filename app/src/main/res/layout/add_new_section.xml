@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="5"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <LinearLayout
+            android:layout_weight="4"
+            android:weightSum="3.4"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_height="0dp">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:background="#684E18"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:text="ADD NEW SECTION"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1.2"
+                android:orientation="vertical"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".6"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/coffe"
+                    android:text="Please Enter Section  Name"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/section_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".6"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/edittextback"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Section Name.."
+                    android:textColorHint="@color/coffe"
+                    android:paddingStart="6dp"
+                    android:textColor="#ea282323" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1.2"
+                android:orientation="vertical"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".6"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/coffe"
+                    android:text="Please Choose Shift  Name"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/shift_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".6"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/edittextback"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Shift Name.."
+                    android:theme="@style/MatchSpinnerTheme2"
+                    android:textColorHint="@color/coffe"
+                    android:paddingStart="6dp"
+                    android:textColor="#ea282323" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:gravity="bottom"
+            android:padding="10dp"
+            android:layout_height="0dp">
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/signupbutton"
+                android:text="Cancel"
+                android:textColor="#fbfafa"
+                android:layout_margin="6dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/addmember"
+                android:layout_width="0dp"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/signupbutton"
+                android:text="Add Class"
+                android:textColor="#fbfafa"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

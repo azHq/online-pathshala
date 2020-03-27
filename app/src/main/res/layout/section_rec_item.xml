@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:elevation="10dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="10dp"
+    android:layout_height="120dp">
+
+
+    <LinearLayout
+        android:id="@+id/view_profile"
+        android:weightSum="5"
+        android:padding="3dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:weightSum="4"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_weight="4"
+                android:src="@drawable/class_icon"
+                android:layout_width="match_parent"
+                android:layout_marginRight="6dp"
+                android:layout_height="0dp">
+            </ImageView>
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_margin="6dp"
+            android:layout_width="1sp"
+            android:background="#99DBD3D3"
+            android:layout_height="match_parent">
+        </View>
+        <LinearLayout
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginLeft="3dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Section Name"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="match_parent"
+                    android:background="#99DBD3D3"
+                    android:layout_height="1sp">
+                </View>
+                <TextView
+                    android:id="@+id/section_name"
+                    android:layout_weight="1"
+                    android:text="A"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_margin="6dp"
+                android:layout_width="1sp"
+                android:background="#99DBD3D3"
+                android:layout_height="match_parent">
+            </View>
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Total Student"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="match_parent"
+                    android:background="#99DBD3D3"
+                    android:layout_height="1sp">
+                </View>
+                <TextView
+                    android:id="@+id/total_student"
+                    android:layout_weight="1"
+                    android:text="67"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_margin="6dp"
+                android:layout_width="1sp"
+                android:background="#99DBD3D3"
+                android:layout_height="match_parent">
+            </View>
+
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="Shift"
+                    android:textColor="#1830AA"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="match_parent"
+                    android:background="#99DBD3D3"
+                    android:layout_height="1sp">
+                </View>
+                <TextView
+                    android:id="@+id/shift"
+                    android:text="Morning"
+                    android:textColor="#925E17"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+            </LinearLayout>
+
+
+            <View
+                android:layout_margin="6dp"
+                android:layout_width="1sp"
+                android:background="#99DBD3D3"
+                android:layout_height="match_parent">
+            </View>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="Class Teacher"
+                    android:textColor="#1830AA"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="match_parent"
+                    android:background="#99DBD3D3"
+                    android:layout_height="1sp">
+                </View>
+                <TextView
+                    android:id="@+id/teacher"
+                    android:text="Mizanur Rahman"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:padding="2dp"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textColor="#925E17"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

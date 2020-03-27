@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Authority.Class_Routine_For_Auth">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#D2852506"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <Spinner
+                        android:id="@+id/medium"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="wrap_content"
+                        android:popupBackground="@color/coffe"
+                        android:dropDownVerticalOffset="50dp"
+                        android:layout_height="match_parent">
+                    </Spinner>
+                </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+                </View>
+                <LinearLayout
+                    android:background="#D2852506"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <Spinner
+                        android:id="@+id/class_name"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTint="@color/white"
+                        android:dropDownVerticalOffset="50dp"
+                        android:popupBackground="@color/coffe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                    </Spinner>
+                </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+                </View>
+                <LinearLayout
+                    android:background="#D2852506"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <Spinner
+                        android:id="@+id/section"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="wrap_content"
+                        android:dropDownVerticalOffset="50dp"
+                        android:popupBackground="@color/coffe"
+                        android:spinnerMode="dropdown"
+                        android:dropDownSelector="@color/white"
+                        android:layout_height="match_parent">
+                    </Spinner>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/no_item"
+            android:text="No Routine"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/red_circle"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_add_black_24dp"/>
+
+</FrameLayout>

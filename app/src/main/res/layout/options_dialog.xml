@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/assign_teacher"
+        android:text="Assign Teacher"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/coffe"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+    </TextView>
+    <TextView
+        android:id="@+id/remove_teacher"
+        android:text="Remove Teacher"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="#250266"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+    </TextView>
+    <TextView
+        android:id="@+id/edit"
+        android:text="Edit"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/dark_sky"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+    </TextView>
+    <TextView
+        android:id="@+id/delete"
+        android:text="Delete"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="#4D0303"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+    </TextView>
+
+</LinearLayout>

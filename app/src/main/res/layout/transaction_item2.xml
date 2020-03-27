@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="500dp"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/transaction_type"
+            android:text="Transaction Type"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color2"
+            android:textSize="15sp"
+            android:textAppearance="@style/table_header_text_style2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/amount"
+            android:text="Total Amount"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="15sp"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/debit_credit"
+            android:text="Debit/Credit"
+            android:gravity="center"
+            android:background="@drawable/table_cell"
+            android:textColor="@color/table_header_text_color"
+            android:textSize="15sp"
+            android:textAppearance="@style/table_header_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

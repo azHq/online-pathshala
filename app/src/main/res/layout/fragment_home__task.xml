@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Student.Home_Task">
+
+    <TextView
+        android:id="@+id/no_item"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="No Home Task Still Assigned"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</FrameLayout>

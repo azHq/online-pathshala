@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/class_routine"
+        app:showAsAction="always"
+        android:title="Bangla Medium"
+        android:icon="@drawable/ban" />
+    <item android:id="@+id/exam_routine"
+        app:showAsAction="always"
+        android:title="English Medium"
+        android:icon="@drawable/english" />
+
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="medium">40dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="table_header_text_size">13sp</dimen>
+    <dimen name="table_header_text_size2">10sp</dimen>
+    <dimen name="table_body_text_size">10sp</dimen>
+    <dimen name="table_border_width">.8dp</dimen>
+    <dimen name="half_dp">.5dp</dimen>
+</resources>
