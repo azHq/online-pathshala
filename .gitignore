@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.iml
 .gradle
 /local.properties
@@ -10,6 +11,8 @@
 /captures
 .externalNativeBuild
 =======
+=======
+>>>>>>> 588efec0e066620b867134072731bba1a2a842f7
 # Built application files
 *.apk
 *.aar
@@ -95,4 +98,7 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+<<<<<<< HEAD
 >>>>>>> ec32ca8e478a6f74ccab321fbae24483e73135c6
+=======
+>>>>>>> 588efec0e066620b867134072731bba1a2a842f7
