@@ -44,7 +44,7 @@ public class Add_School extends AppCompatActivity {
     EditText et_school_name,et_autority_name,et_email,et_phone_number;
     TextView error;
     Spinner sp_authority_type;
-    String[] users={"Choose authority Type","Principal","Vice_Principal","Accountance","Stuff","Others"};
+    String[] users={"Choose authority Type","Principal","Vice_Principal"};
     String school_name,authority_name,email="",phone_number,user_type;
     ProgressDialog progressDialog;
     @Override
@@ -99,12 +99,21 @@ public class Add_School extends AppCompatActivity {
         return phone_number.matches(pattern);
     }
 
+    public String remove_country_code(String phone_number){
+        phone_number=phone_number.trim().replace("+","");
+        if(phone_number.startsWith("88")){
+
+            phone_number=phone_number.substring(2,phone_number.length()-1);
+        }
+
+        return phone_number;
+    }
     public void onSubmit(View view){
 
         school_name=et_school_name.getText().toString();
         authority_name=et_autority_name.getText().toString();
         email=et_email.getText().toString();
-        phone_number=et_phone_number.getText().toString();
+        phone_number=remove_country_code(et_phone_number.getText().toString());
 
 
         if(school_name.length()>3&&authority_name.length()>3&&emailValidation()&&phone_number_validation( phone_number)&&!user_type.contains("Choose authority Type")){

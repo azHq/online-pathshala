@@ -6,230 +6,243 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#304404"
-    tools:context=".Teacher.View_Result2">
+    tools:context=".Teacher.View_Result2_Form_Config">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:weightSum="6"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="480dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/search_type"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:theme="@style/SelectedItemWhite"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/medium_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/medium"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:theme="@style/SelectedItemWhite"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/class_name_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/class_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/section_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/section"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:theme="@style/SelectedItemWhite"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/exam_type_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/exam_type"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/exam_name_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/exam_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Button
-            android:id="@+id/submit"
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/border_back"
-            android:text="OK"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-            android:textColor="@color/white"
-            android:textSize="18sp">
-        </Button>
-    </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="5.5"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="420dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".9"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/search_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:theme="@style/SelectedItemWhite"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/medium_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".9"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:theme="@style/SelectedItemWhite"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/class_name_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".9"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/class_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/section_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".9"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/section"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:theme="@style/SelectedItemWhite"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/exam_type_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".9"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/exam_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/exam_name_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_weight=".9"
+                    android:background="@drawable/border_back"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/exam_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="51dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:clickable="false"
+                        android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_back"
+                    android:text="OK"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                    android:textColor="@color/white"
+                    android:textSize="18sp">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

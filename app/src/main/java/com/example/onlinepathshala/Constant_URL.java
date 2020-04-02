@@ -2,7 +2,7 @@ package com.example.onlinepathshala;
 
 public class Constant_URL {
     //public final static String base_url="http://172.16.226.122/online_pathshala/";
-    public final static String base_url="http://192.168.0.111/online_pathshala/";
+    public final static String base_url="http://192.168.0.100/online_pathshala/";
     public final static String admin_authority_login_url=base_url+"admin_login.php";
     public final static String add_athurity_url=base_url+"Add_Authority.php";
     public final static String get_all_data_url=base_url+"Get_All_Data.php";
@@ -109,6 +109,12 @@ public class Constant_URL {
     public final static String delete_multiple_item=base_url+"Delete_Multiple_Item.php";
     public final static String remove_multiple_student_from_class=base_url+"Remove_Multiple_Student_From_Class.php";
     public final static String add_multiple_student=base_url+"Add_Multiple_Student.php";
-
+    public final static String edit_admin_profile=base_url+"Edit_Admin_Profile.php";
+    public final static String admin_profile_image_upload=base_url+"Admin_Profile_Image_Upload.php";
+    public final static String get_admin_info=base_url+"Get_Admin_Info.php";
+    public final static String get_my_student=base_url+"Get_My_Student.php";
+    public final static String get_section_info2=base_url+"Get_Section_Info2.php";
+    public final static String get_final_result=base_url+"Get_Final_Result.php";
+    public final static String edit_subject_url=base_url+"Edit_Subject.php";
 
 }

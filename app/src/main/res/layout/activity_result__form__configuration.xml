@@ -7,263 +7,270 @@
     android:background="#5C1515"
     android:orientation="vertical"
     android:weightSum="6"
-    android:padding="10dp"
     tools:context=".Authority.Result_Form_Configuration2">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:weightSum="6.4"
-        android:layout_width="match_parent"
-        android:layout_height="480dp">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/medium"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:theme="@style/SelectedItemWhite"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/class_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/section"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:theme="@style/SelectedItemWhite"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/exam_type"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/exam_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="#1D5A8F"
-            android:layout_weight=".9"
-            android:background="@drawable/border_back"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/subject_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginRight="4dp"
-                android:clickable="false"
-                android:background="@drawable/ic_arrow_drop_down_black_24dp"
-                android:backgroundTint="@color/white" />
-
-        </RelativeLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="20dp"
-            android:layout_weight=".9"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-
-
-            <Button
-                android:id="@+id/choose_student"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:textColor="@color/white"
-                android:background="@drawable/border_back"
-                android:text="Choose Student"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:paddingLeft="10dp"
-                />
-
-            <Button
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="@drawable/male_profile"
-                app:layout_constrainedHeight="true"
-                android:clickable="false"
-                app:layout_constrainedWidth="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.23"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </Button>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </LinearLayout>
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Button
+        <LinearLayout
+            android:orientation="vertical"
+            android:weightSum="6.4"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/border_back"
-            android:onClick="submit"
-            android:text="OK"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-            android:textColor="@color/white"
-            android:textSize="18sp">
-        </Button>
-    </LinearLayout>
+            android:layout_height="480dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="#1D5A8F"
+                android:layout_weight=".9"
+                android:background="@drawable/border_back"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:theme="@style/SelectedItemWhite"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:clickable="false"
+                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="#1D5A8F"
+                android:layout_weight=".9"
+                android:background="@drawable/border_back"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/class_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:clickable="false"
+                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="#1D5A8F"
+                android:layout_weight=".9"
+                android:background="@drawable/border_back"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/section"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:theme="@style/SelectedItemWhite"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:clickable="false"
+                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="#1D5A8F"
+                android:layout_weight=".9"
+                android:background="@drawable/border_back"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/exam_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:clickable="false"
+                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="#1D5A8F"
+                android:layout_weight=".9"
+                android:background="@drawable/border_back"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/exam_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:clickable="false"
+                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="#1D5A8F"
+                android:layout_weight=".9"
+                android:background="@drawable/border_back"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/subject_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:clickable="false"
+                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="20dp"
+                android:layout_weight=".9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+
+
+                <Button
+                    android:id="@+id/choose_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:background="@drawable/border_back"
+                    android:text="Choose Student"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:paddingLeft="10dp"
+                    />
+
+                <Button
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/male_profile"
+                    app:layout_constrainedHeight="true"
+                    android:clickable="false"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </Button>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_height="match_parent">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_back"
+                    android:onClick="submit"
+                    android:text="OK"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                    android:textColor="@color/white"
+                    android:textSize="18sp">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 
 
 

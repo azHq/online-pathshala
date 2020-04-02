@@ -31,7 +31,6 @@
     <style name="mytheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/primarydark</item>
         <item name="colorPrimaryDark">@color/dark</item>
-        <item name="android:height">30dp</item>
     </style>
 
     <style name="admin_toolbar_theme" parent="Theme.AppCompat.Light">
@@ -39,14 +38,12 @@
         <item name="colorPrimaryDark">#4E342E</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:elevation">1dp</item>
-        <item name="android:height">30dp</item>
     </style>
     <style name="admin_toolbar_theme2" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">#FAFAFA</item>
         <item name="colorPrimaryDark">#8F452A</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:elevation">1dp</item>
-        <item name="android:height">30dp</item>
     </style>
 
     <style name="mytheme2" parent="Theme.AppCompat.DayNight">
@@ -58,9 +55,14 @@
     <style name="mytheme4" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
-        <item name="android:height">30dp</item>
     </style>
     <style name="mytheme4.NoActionBar" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="custom_theme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/dark</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

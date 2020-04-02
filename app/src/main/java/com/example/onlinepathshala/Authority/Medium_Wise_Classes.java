@@ -243,6 +243,7 @@ public class Medium_Wise_Classes extends Fragment implements View.OnTouchListene
                     Intent tnt=new Intent(getContext(),All_Sections.class);
                     tnt.putExtra("class_id",memberInfo.id);
                     tnt.putExtra("class_name",memberInfo.class_name);
+                    tnt.putExtra("medium_name",medium);
                     tnt.putExtra("type",activity_type);
                     startActivity(tnt);
                 }
@@ -257,6 +258,7 @@ public class Medium_Wise_Classes extends Fragment implements View.OnTouchListene
                     Intent tnt=new Intent(getContext(),All_Sections.class);
                     tnt.putExtra("class_id",memberInfo.id);
                     tnt.putExtra("class_name",memberInfo.class_name);
+                    tnt.putExtra("medium_name",medium);
                     tnt.putExtra("type",activity_type);
                     startActivity(tnt);
                 }
@@ -265,6 +267,7 @@ public class Medium_Wise_Classes extends Fragment implements View.OnTouchListene
                     Intent tnt=new Intent(getContext(),All_Sections.class);
                     tnt.putExtra("class_id",memberInfo.id);
                     tnt.putExtra("class_name",memberInfo.class_name);
+                    tnt.putExtra("medium_name",medium);
                     tnt.putExtra("type",activity_type);
                     startActivity(tnt);
                 }

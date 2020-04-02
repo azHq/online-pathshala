@@ -142,7 +142,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="@drawable/signupbutton"
-                android:text="Add Class"
+                android:text="Add Section"
                 android:textColor="#fbfafa"
                 android:textStyle="bold" />
 

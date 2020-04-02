@@ -272,10 +272,38 @@ public class Publish_Result extends AppCompatActivity {
 
                     marks.weight="0";
                 }
-                double totalobtain=Double.parseDouble(marks.obtain_marks_subjective)+Double.parseDouble(marks.obtain_marks_objective)+Double.parseDouble(marks.obtain_marks_practical);
-                double total_dis=Double.parseDouble(marks.subjective_total)+Double.parseDouble(marks.objective_total)+Double.parseDouble(marks.practical_total);
+
+                double obtain_mark_subjective2=Double.parseDouble(marks.obtain_marks_subjective);
+                double obtain_mark_objective2=Double.parseDouble(marks.obtain_marks_objective);
+                double obtain_marks_practical2=Double.parseDouble(marks.obtain_marks_practical);
+                double total_subjective2=Double.parseDouble(marks.subjective_total);
+                double total_objective2=Double.parseDouble(marks.objective_total);
+                double total_practical2=Double.parseDouble(marks.practical_total);
+                double total_obtain=obtain_mark_subjective2+obtain_mark_objective2+obtain_marks_practical2;
+
+                if(obtain_mark_subjective2>total_subjective2){
+
+                    valid=false;
+                    message+="Obtain Marks In Subjective Can Not Be Greater Than Total Subjective Marks\n";
+                }
+                if(obtain_mark_objective2>total_objective2){
+
+                    valid=false;
+                    message+="Obtain Marks In Objective Can Not Be Greater Than Total Objective Marks\n";
+                }
+                if(obtain_marks_practical2>total_practical2){
+
+                    valid=false;
+                    message+="Obtain Marks In Practical Can Not Be Greater Than Total Practical Marks\n";
+                }
+                double total_mark=total_subjective2+total_objective2+total_practical2;
                 double total=Double.parseDouble(marks.total_marks);
-                if(total!=total_dis||totalobtain>total){
+                if(total_mark>total){
+
+                    valid=false;
+                    message+="Sum Of (subjective_total,objective_total,practical_total) Can Not Be Greater Than Total Marks\n";
+                }
+                if(total_obtain>total){
 
                     valid=false;
                     message+="Obtain Marks Can Not Be Greater Than Total Marks\n";
@@ -868,7 +896,7 @@ public class Publish_Result extends AppCompatActivity {
 
             Uri uri=data.getData();
 
-            if(uri.getPath().contains(".csv")){
+            if(uri.getPath().contains(".csv")||true){
                 InputStream path= null;
                 try {
                     path = getContentResolver().openInputStream(uri);

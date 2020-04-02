@@ -54,7 +54,7 @@ public class Add_ModeratorActivity extends AppCompatActivity {
                 authority_name=et_autority_name.getText().toString();
                 email=et_email.getText().toString();
                 phone_number=et_phone_number.getText().toString();
-
+                remove_country_code(phone_number);
 
                 if(authority_name.length()>=3&&emailValidation()&&phone_number_validation(phone_number)&&!user_type.contains("Choose authority Type")){
 
@@ -113,7 +113,15 @@ public class Add_ModeratorActivity extends AppCompatActivity {
         return phone_number.matches(pattern);
     }
 
+    public String remove_country_code(String phone_number){
+        phone_number=phone_number.trim().replace("+","");
+        if(phone_number.startsWith("88")){
 
+            phone_number=phone_number.substring(2,phone_number.length()-1);
+        }
+
+        return phone_number;
+    }
 
     public void show_error_message(String message,String title){
 

@@ -21,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -35,6 +34,7 @@ import com.example.onlinepathshala.Authority.Student;
 import com.example.onlinepathshala.Authority.Subject;
 import com.example.onlinepathshala.Constant_URL;
 import com.example.onlinepathshala.Exam;
+import com.example.onlinepathshala.Final_Result_View_For_All;
 import com.example.onlinepathshala.R;
 import com.example.onlinepathshala.Section;
 import com.example.onlinepathshala.SharedPrefManager;
@@ -51,7 +51,7 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class View_Result2 extends AppCompatActivity {
+public class View_Result2_Form_Config extends AppCompatActivity {
 
     public NumberPicker nb_month,nb_day,nb_year;
     Spinner sp_class,sp_exam_type,sp_exam_name,sp_student,sp_medium,sp_section,sp_search_type;
@@ -97,14 +97,18 @@ public class View_Result2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if((!exam_type.equalsIgnoreCase("Choose Exam Type")&&!exam_name.equalsIgnoreCase("Choose Exam Name")&&search_option.equalsIgnoreCase("Exam Wise"))||(!class_name.equalsIgnoreCase("Choose Class")&&!medium_name.equalsIgnoreCase("Choose Medium")&&!section_name.equalsIgnoreCase("Choose Section")&&search_option.equalsIgnoreCase("Student Wise"))){
+                if((exam_type!=null&&!exam_type.equalsIgnoreCase("Choose Exam Type")&&!exam_type.equalsIgnoreCase("Final Result")&&exam_name!=null&&!exam_name.equalsIgnoreCase("Choose Exam Name")&&search_option!=null&&search_option.equalsIgnoreCase("Exam Wise")&&class_name!=null&&!class_name.equalsIgnoreCase("Choose Class")&&medium_name!=null&&!medium_name.equalsIgnoreCase("Choose Medium")&&section_name!=null&&!section_name.equalsIgnoreCase("Choose Section"))||(class_name!=null&&!class_name.equalsIgnoreCase("Choose Class")&&medium_name!=null&&!medium_name.equalsIgnoreCase("Choose Medium")&&section_name!=null&&!section_name.equalsIgnoreCase("Choose Section")&&search_option!=null&&search_option.equalsIgnoreCase("Student Wise")))
+                {
 
                     if(search_option.equalsIgnoreCase("Exam Wise")){
 
 
-                        Intent tnt=new Intent(getApplicationContext(), Exam_Wise_Result.class);
+
+                        Intent tnt=new Intent(getApplicationContext(),Exam_Wise_Result.class);
                         tnt.putExtra("exam_id",exam_id);
                         tnt.putExtra("exam_type",exam_type);
+                        tnt.putExtra("section_id",section_id);
+                        tnt.putExtra("class_id",class_id);
                         startActivity(tnt);
                     }
                     else{
@@ -116,8 +120,44 @@ public class View_Result2 extends AppCompatActivity {
 
                     }
                 }
+                else if(exam_type!=null&&!exam_type.equalsIgnoreCase("Choose Exam Type")&&exam_type.equalsIgnoreCase("Final Result")&&search_option!=null&&search_option.equalsIgnoreCase("Exam Wise")&&(class_name!=null&&!class_name.equalsIgnoreCase("Choose Class")&&medium_name!=null&&!medium_name.equalsIgnoreCase("Choose Medium")&&section_name!=null&&!section_name.equalsIgnoreCase("Choose Section"))){
+
+                    Intent tnt=new Intent(getApplicationContext(), Final_Result_View_For_All.class);
+                    tnt.putExtra("exam_id",exam_id);
+                    tnt.putExtra("exam_type",exam_type);
+                    tnt.putExtra("section_id",section_id);
+                    tnt.putExtra("class_id",class_id);
+                    startActivity(tnt);
+                }
                 else{
-                    showMessage();
+
+                    if(exam_type!=null&&exam_type.equalsIgnoreCase("Choose Exam Type")){
+                        showMessage("Error In Data","Please Choose Class Type");
+                    }
+
+                    else if(search_option!=null&&search_option.equalsIgnoreCase("Choose Search Option")){
+
+                        showMessage("Error In Data","Please Choose Search Option");
+                    }
+                    else if(class_name!=null&&class_name.equalsIgnoreCase("Choose Class")){
+
+                        showMessage("Error In Data","Please Choose Class Name");
+                    }
+                    else if(medium_name!=null&&medium_name.equalsIgnoreCase("Choose Medium")){
+
+                        showMessage("Error In Data","Please Choose Medium");
+                    }
+                    else if(section_name!=null&&section_name.equalsIgnoreCase("Choose Section")){
+                        showMessage("Error In Data","Please Choose Section");
+                    }
+                    else if(exam_name!=null&&exam_name.equalsIgnoreCase("Choose Exam Name")){
+
+                        showMessage("Error In Data","Please Choose Exam Name");
+                    }
+                    else{
+
+                        showMessage("Error In Data","Please Fill Up All Required Data");
+                    }
                 }
             }
         });
@@ -128,11 +168,11 @@ public class View_Result2 extends AppCompatActivity {
         setDisplayValue();
     }
 
-    public void showMessage(){
+    public void showMessage(String title,String message){
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(View_Result2.this);
-        builder.setTitle("Invalid Data");
-        builder.setMessage("Please Enter All Required data");
+        AlertDialog.Builder builder=new AlertDialog.Builder(View_Result2_Form_Config.this);
+        builder.setTitle(title);
+        builder.setMessage(message);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -157,6 +197,7 @@ public class View_Result2 extends AppCompatActivity {
         exam_types.add("Monthly Test");
         exam_types.add("Half Yearly");
         exam_types.add("Final Exam");
+        exam_types.add("Final Result");
 
         search_types.add("Choose Search Option");
         search_types.add("Exam Wise");
@@ -274,6 +315,14 @@ public class View_Result2 extends AppCompatActivity {
 
                 }
                 exam_type=(String)exam_types.get(i);
+                if(exam_type.equalsIgnoreCase("Final Result")){
+
+                    exam_name_layout.setVisibility(View.GONE);
+                }
+                else{
+
+                    exam_name_layout.setVisibility(View.VISIBLE);
+                }
                 get_all_exams("Exam", Constant_URL.get_type_wise_exam,class_id,section_id,exam_type);
             }
 

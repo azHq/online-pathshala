@@ -8,7 +8,7 @@
     tools:context=".Authority.Result_For_Authority">
 
     <LinearLayout
-        android:weightSum="4"
+        android:weightSum="5"
         android:layout_margin="30dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
@@ -24,7 +24,7 @@
             android:background="@drawable/exam_button_back"
             android:text="Class Tests"
             android:textStyle="bold"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1">
         </Button>
         <Button
@@ -36,7 +36,7 @@
             android:background="@drawable/exam_button_back"
             android:text="Monthly Tests"
             android:textStyle="bold"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1">
         </Button>
         <Button
@@ -48,7 +48,7 @@
             android:background="@drawable/exam_button_back"
             android:text="Half Yearly"
             android:textStyle="bold"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1">
         </Button>
         <Button
@@ -60,7 +60,19 @@
             android:background="@drawable/exam_button_back"
             android:text="Final Exam"
             android:textStyle="bold"
-            android:textSize="35sp"
+            android:textSize="30sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+        </Button>
+        <Button
+            android:id="@+id/final_result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/exam_button_back"
+            android:text="Final Result"
+            android:textStyle="bold"
+            android:textSize="30sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1">
         </Button>
 

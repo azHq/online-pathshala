@@ -206,6 +206,8 @@ public class All_Student_In_A_Section_For_Result extends AppCompatActivity {
                     Intent tnt=new Intent(getApplicationContext(), Result_For_Authority.class);
                     tnt.putExtra("student_id",memberInfos.get(position).id);
                     tnt.putExtra("class_id",class_id);
+                    tnt.putExtra("section_id",section_id);
+                    tnt.putExtra("student_name",memberInfo.name);
                     startActivity(tnt);
                 }
             });

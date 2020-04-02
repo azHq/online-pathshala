@@ -134,14 +134,17 @@ public class All_Sections_for_teacher extends AppCompatActivity implements View.
                 }
                 else if(activity_type.equalsIgnoreCase("attendence")){
 
-                    Intent tnt=new Intent(getApplicationContext(), Attendance_Approval_View.class);
-                    tnt.putExtra("class_id",class_id);
-                    tnt.putExtra("class_name",class_name);
-                    tnt.putExtra("section_id",section_id);
-                    tnt.putExtra("teacher_id",class_teacher_id);
-                    tnt.putExtra("section_name",section_name);
-                    tnt.putExtra("type",activity_type);
-                    startActivity(tnt);
+
+                        Intent tnt=new Intent(getApplicationContext(), Attendance_Approval_View.class);
+                        tnt.putExtra("class_id",class_id);
+                        tnt.putExtra("class_name",class_name);
+                        tnt.putExtra("section_id",section_id);
+                        tnt.putExtra("teacher_id",class_teacher_id);
+                        tnt.putExtra("section_name",section_name);
+                        tnt.putExtra("type",activity_type);
+                        startActivity(tnt);
+
+
                 }
             }
         });

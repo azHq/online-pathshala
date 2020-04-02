@@ -11,10 +11,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -61,7 +64,14 @@ public class Contact_With_Teacher extends Fragment {
     RecyclerView recyclerView;
     ProgressDialog progressDialog;
     AlertDialog alertDialog;
-
+    boolean show_checkbox=false,checked_all=false;
+    ArrayList<String> student_ids=new ArrayList<>();
+    ArrayList<Teacher> search_list=new ArrayList<>();
+    RecycleAdapter recycleAdapter;
+    TextView no_item;
+    EditText et_search;
+    Button search_btn;
+    String search_string;
     @Override
     public View onCreateView(LayoutInflater inflater,final  ViewGroup container,
                              Bundle savedInstanceState) {
@@ -69,16 +79,77 @@ public class Contact_With_Teacher extends Fragment {
         View view=inflater.inflate(R.layout.fragment_teacher__contact, container, false);
         frameLayout=view.findViewById(R.id.frame_layout);
         recyclerView=view.findViewById(R.id.recycle);
+        no_item=view.findViewById(R.id.no_item);
         progressDialog=new ProgressDialog(getContext());
         progressDialog.setMessage("Please wait...");
+        et_search=view.findViewById(R.id.search);
+        search_btn=view.findViewById(R.id.search_btn);
+        et_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+                search_string=charSequence.toString();
+                set_search_match_item(charSequence.toString(),1);
+
+
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        search_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                set_search_match_item(search_string,2);
+
+            }
+        });
 
 
 
         return view;
     }
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void set_search_match_item(String search_string,int condition){
+
+        search_string=search_string.toLowerCase();
+        ArrayList<Teacher> search_list=new ArrayList<>();
+        search_list.clear();
+        for(Teacher student2:memberInfos){
+
+            String id=student2.id.toLowerCase();
+            String name=student2.name.toLowerCase();
+
+            if(condition==1){
+                if(id.contains(search_string)||name.contains(search_string)){
+
+                    search_list.add(student2);
+                }
+            }
+            else if(condition==2){
+                if(id.equalsIgnoreCase(search_string)||name.equalsIgnoreCase(search_string)){
+
+                    search_list.add(student2);
+                }
+            }
+
+
+        }
+        recycleAdapter=new RecycleAdapter(search_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(recycleAdapter);
+
 
     }
 
@@ -124,14 +195,16 @@ public class Contact_With_Teacher extends Fragment {
                                     }
                                 }
 
-                                RecycleAdapter recycleAdapter=new RecycleAdapter(memberInfos);
+                                recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                                 recyclerView.setAdapter(recycleAdapter);
+                                no_item.setVisibility(View.GONE);
                                 progressDialog.dismiss();
                             }
                             else{
 
-                                RecycleAdapter recycleAdapter=new RecycleAdapter(memberInfos);
+                                no_item.setVisibility(View.VISIBLE);
+                                 recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                                 recyclerView.setAdapter(recycleAdapter);
                                 Toast.makeText(getContext(),"No Teacher Still Added",Toast.LENGTH_LONG).show();

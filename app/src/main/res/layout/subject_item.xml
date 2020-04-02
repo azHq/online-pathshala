@@ -8,7 +8,7 @@
     app:cardElevation="2dp"
     app:cardBackgroundColor="#FFFFFF"
     app:cardCornerRadius="11dp"
-    android:layout_height="120dp">
+    android:layout_height="230dp">
 
 
     <LinearLayout
@@ -20,7 +20,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_weight="1.2"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent">
@@ -47,42 +47,245 @@
         <LinearLayout
             android:layout_weight="3"
             android:layout_width="0dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
+            android:orientation="vertical"
+            android:weightSum="6"
             android:layout_marginLeft="8dp"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_weight="1.6"
                 android:weightSum="2"
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
                 <TextView
                     android:layout_weight="1"
                     android:text="Subject Name"
                     android:textColor="#1830AA"
                     android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp">
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
                 </TextView>
                 <View
                     android:layout_margin="3dp"
-                    android:layout_width="match_parent"
+                    android:layout_width="1sp"
                     android:background="#99DBD3D3"
-                    android:layout_height="1sp">
+                    android:layout_height="match_parent">
                 </View>
+
                 <TextView
                     android:id="@+id/subject_name"
                     android:layout_weight="1"
                     android:text="English"
                     android:textColor="#925E17"
                     android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp">
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+            <View
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:background="#99DBD3D3"
+                android:layout_height="1sp">
+            </View>
+
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Total Marks"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="1sp"
+                    android:background="#99DBD3D3"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/total_marks"
+                    android:layout_weight="1"
+                    android:text="100"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+            <View
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:background="#99DBD3D3"
+                android:layout_height="1sp">
+            </View>
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/class_weight1"
+                    android:layout_weight="1"
+                    android:text="Class Test Weight"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="1sp"
+                    android:background="#99DBD3D3"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/class_test_weight2"
+                    android:layout_weight="1"
+                    android:text="5"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+            <View
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:background="#99DBD3D3"
+                android:layout_height="1sp">
+            </View>
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/monthly_weight1"
+                    android:layout_weight="1"
+                    android:text="Monthly Test Weight"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="1sp"
+                    android:background="#99DBD3D3"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/monthly_test_weight"
+                    android:layout_weight="1"
+                    android:text="10"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+            <View
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:background="#99DBD3D3"
+                android:layout_height="1sp">
+            </View>
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/half_weight1"
+                    android:layout_weight="1"
+                    android:text="Half Yearly Weight"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="1sp"
+                    android:background="#99DBD3D3"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/half_yearly_weight"
+                    android:layout_weight="1"
+                    android:text="20"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
                 </TextView>
             </LinearLayout>
 
+            <View
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:background="#99DBD3D3"
+                android:layout_height="1sp">
+            </View>
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/final_weight1"
+                    android:layout_weight="1"
+                    android:text="Final Exam Weight"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:textColor="#1830AA"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+                <View
+                    android:layout_margin="3dp"
+                    android:layout_width="1sp"
+                    android:background="#99DBD3D3"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/final_exam_weight"
+                    android:layout_weight="1"
+                    android:text="70"
+                    android:textColor="#925E17"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
 
         </LinearLayout>
 

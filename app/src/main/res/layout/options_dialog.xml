@@ -13,17 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="60dp">
     </TextView>
+
     <TextView
         android:id="@+id/remove_teacher"
-        android:text="Remove Teacher"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="#250266"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:background="#250266"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Remove Teacher"
+        android:textColor="@color/white"
+        android:textSize="20sp">
+
     </TextView>
+
     <TextView
         android:id="@+id/edit"
         android:text="Edit"

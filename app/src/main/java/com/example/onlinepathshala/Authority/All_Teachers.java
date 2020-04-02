@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.DragEvent;
@@ -27,6 +29,9 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -46,6 +51,7 @@ import com.example.onlinepathshala.R;
 import com.example.onlinepathshala.SharedPrefManager;
 import com.example.onlinepathshala.VolleySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,6 +82,15 @@ public class All_Teachers extends Fragment implements View.OnTouchListener,View.
     float posX=0;
     float posY=0;
     String subject_id="0";
+    Button delete;
+    CheckBox select_all;
+    RecycleAdapter recycleAdapter;
+    boolean show_checkbox=false,checked_all=false;
+    ArrayList<String> student_ids=new ArrayList<>();
+    EditText et_search;
+    Button search_btn;
+    String search_string;
+    ArrayList<Teacher> search_list=new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater,final  ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,13 +103,74 @@ public class All_Teachers extends Fragment implements View.OnTouchListener,View.
         progressDialog=new ProgressDialog(getContext());
         progressDialog.setMessage("Please wait...");
         dragView.setOnClickListener(this);
+        et_search=view.findViewById(R.id.search);
+        search_btn=view.findViewById(R.id.search_btn);
+        et_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+                search_string=charSequence.toString();
+                set_search_match_item(charSequence.toString(),1);
+
+
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        search_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                set_search_match_item(search_string,2);
+
+            }
+        });
+
         get_all_subject();
 
         return view;
     }
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+
+    public void set_search_match_item(String search_string,int condition){
+
+        search_string=search_string.toLowerCase();
+        search_list.clear();
+        for(Teacher student2:memberInfos){
+
+            String id=student2.id.toLowerCase();
+            String name=student2.name.toLowerCase();
+
+            if(condition==1){
+                if(id.contains(search_string)||name.contains(search_string)){
+
+                    search_list.add(student2);
+                }
+            }
+            else if(condition==2){
+                if(id.equalsIgnoreCase(search_string)||name.equalsIgnoreCase(search_string)){
+
+                    search_list.add(student2);
+                }
+            }
+
+
+        }
+        recycleAdapter=new RecycleAdapter(search_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(recycleAdapter);
+
 
     }
 
@@ -226,14 +302,14 @@ public class All_Teachers extends Fragment implements View.OnTouchListener,View.
                                     }
                                 }
 
-                                RecycleAdapter recycleAdapter=new RecycleAdapter(memberInfos);
+                                recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                                 recyclerView.setAdapter(recycleAdapter);
                                 progressDialog.dismiss();
                             }
                             else{
 
-                                RecycleAdapter recycleAdapter=new RecycleAdapter(memberInfos);
+                                recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                                 recyclerView.setAdapter(recycleAdapter);
                                 Toast.makeText(getContext(),"No Teacher Still Added",Toast.LENGTH_LONG).show();
@@ -362,6 +438,12 @@ public class All_Teachers extends Fragment implements View.OnTouchListener,View.
             holder.subject_name.setText(memberInfo.subject_name);
             holder.name.setSelected(true);
             holder.subject_name.setSelected(true);
+
+            if(!memberInfo.image_path.equalsIgnoreCase("null")){
+
+
+                Picasso.get().load(memberInfo.image_path).placeholder(R.drawable.profile10).into(holder.profile_image);
+            }
             holder.delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

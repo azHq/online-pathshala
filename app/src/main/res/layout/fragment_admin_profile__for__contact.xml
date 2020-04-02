@@ -3,14 +3,240 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Authority.Admin_profile_For_Contact">
 
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:text="Admin Contact" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/signupheaderback">
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/profile2"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.18"
+            app:layout_constraintWidth_percent=".4">
+        </de.hdodenhof.circleimageview.CircleImageView>
+        <TextView
+            android:id="@+id/admin_name"
+            android:text="Admin"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        </TextView>
+        <ScrollView
+            app:layout_constraintTop_toBottomOf="@+id/admin_name"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:background="#B7DBCACA"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp">
+                    </View>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="3"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:layout_height="55dp">
+
+                        <View
+                            android:background="#B7DBCACA"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent">
+                        </View>
+                        <LinearLayout
+                            android:id="@+id/message"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:background="@drawable/messenger"
+                                android:layout_width="40dp"
+                                android:scaleType="fitXY"
+                                android:layout_height="40dp">
+                            </ImageView>
+                        </LinearLayout>
+                        <View
+                            android:background="#B7DBCACA"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent">
+                        </View>
+                        <LinearLayout
+                            android:id="@+id/call"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:background="@drawable/phones"
+                                android:layout_width="40dp"
+                                android:scaleType="fitXY"
+                                android:layout_height="40dp">
+                            </ImageView>
+                        </LinearLayout>
+                        <View
+                            android:background="#B7DBCACA"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent">
+                        </View>
+                        <LinearLayout
+                            android:id="@+id/more_info"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/details"
+                                android:background="@drawable/more"
+                                android:layout_width="40dp"
+                                android:scaleType="fitXY"
+                                android:layout_height="40dp">
+                            </ImageView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:background="#B7DBCACA"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="1dp">
+                    </View>
+                    <LinearLayout
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp">
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:weightSum="4"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:padding="10dp"
+                                android:src="@drawable/user"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </ImageView>
+                            <ImageView
+                                android:padding="10dp"
+                                android:src="@drawable/envelope"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </ImageView>
+                            <ImageView
+                                android:padding="10dp"
+                                android:src="@drawable/ic_phone_android_black_24dp"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </ImageView>
+                            <ImageView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </ImageView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/name"
+                                    android:fontFamily="serif"
+                                    android:textColor="#440757"
+                                    android:text="Md.Mizanur Rahman"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                </TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/email"
+                                    android:fontFamily="serif"
+                                    android:textColor="#440757"
+                                    android:gravity="center_vertical"
+                                    android:text="mizanurrahman@gmail.com"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                </TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/phone_number"
+                                    android:fontFamily="serif"
+                                    android:textColor="#440757"
+                                    android:text="+8801795528283"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                </TextView>
+                            </LinearLayout>
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

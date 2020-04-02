@@ -39,12 +39,16 @@ import com.example.onlinepathshala.SharedPrefManager;
 import com.example.onlinepathshala.Teacher.Teacher_Dashboard;
 import com.example.onlinepathshala.VolleySingleton;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
@@ -60,7 +64,8 @@ public class Student_Panel extends AppCompatActivity  {
     public static int num_notificatio=0;
     public ActionBar actionBar;
     AlertDialog alertDialog;
-
+    TextView tv_name,tv_email;
+    CircleImageView profile_image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,13 +75,16 @@ public class Student_Panel extends AppCompatActivity  {
         setSupportActionBar(toolbar);
         notification=getIntent().getIntExtra("notification",0);
         fragmentManager =getSupportFragmentManager();
+        tv_name=findViewById(R.id.name);
+        tv_email=findViewById(R.id.email);
+        profile_image=findViewById(R.id.profile_image);
         actionBar=getSupportActionBar();
         context=getApplicationContext();
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
-
+        getAllData();
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -218,11 +226,107 @@ public class Student_Panel extends AppCompatActivity  {
         }
         actionBar.setTitle("Profile");
         changeFragmentView(new Student_profile());
-
+        drawer.openDrawer(GravityCompat.START);
 
     }
 
-    
+    public void getAllData(){
+
+        JSONArray postparams = new JSONArray();
+        postparams.put("Student");
+        postparams.put(SharedPrefManager.getInstance(getApplicationContext()).getUser().getSchool_id());
+        postparams.put(SharedPrefManager.getInstance(getApplicationContext()).getUser().getId());
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.POST,
+                Constant_URL.select_single_row,postparams,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+
+                        String string;
+                        String school_name=SharedPrefManager.getInstance(getApplicationContext()).getUser().getSchool_name();
+                        try {
+                            string=response.getString(0);
+
+                            if(!string.contains("no item")){
+
+                                for(int i=0;i<response.length();i++){
+
+                                    JSONObject member = null;
+                                    try {
+                                        member = response.getJSONObject(i);
+                                        String id = member.getString("id");
+                                        String name=member.getString("student_name");
+
+                                        if(member.has("email")){
+                                            String email=member.getString("email");
+                                            tv_email.setText(email);
+                                        }
+                                        else{
+
+                                        }
+
+
+
+                                        if(member.has("image_path")){
+                                            String  image_path=member.getString("image_path");
+                                            if(!image_path.equalsIgnoreCase("null")){
+
+
+                                                Picasso.get().load(image_path).placeholder(R.drawable.profile2).into(profile_image);
+                                            }
+                                        }
+
+
+
+
+
+
+
+                                        tv_name.setText(name);
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+
+                            }
+                            else{
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+
+                },
+                new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError error){
+
+
+                    }
+                })
+
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                headers.put("User-agent", System.getProperty("http.agent"));
+
+                return headers;
+
+            }
+        };
+        VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
+    }
+
 
     @Override
     protected void onDestroy() {

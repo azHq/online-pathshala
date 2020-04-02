@@ -50,6 +50,7 @@ import com.example.onlinepathshala.Student.Attendence_History_Canlander_View;
 import com.example.onlinepathshala.Student.Routine;
 import com.example.onlinepathshala.Teacher.All_Student2;
 import com.example.onlinepathshala.Teacher.Attendence;
+import com.example.onlinepathshala.Teacher.Attendence_History_Canlander_View_For_Teacher;
 import com.example.onlinepathshala.Teacher.Student_List;
 import com.example.onlinepathshala.VolleySingleton;
 import com.google.gson.JsonObject;
@@ -97,7 +98,7 @@ public class All_Students_For_Attendance_History extends Fragment {
     Spinner sp_medium,sp_class,sp_section;
     String medium="Bangla",class_id="",section_id="",class_name="",section_name="";
     TextView no_item;
-    String date;
+    String date,user_type="";
     TextView tv_date,absent_header_text,present_header_text;
     Button chooseDate,calendar;
     @Override
@@ -111,7 +112,7 @@ public class All_Students_For_Attendance_History extends Fragment {
         absent=view.findViewById(R.id.recycle2);
         absent_header_text=view.findViewById(R.id.absent_header_text);
         present_header_text=view.findViewById(R.id.present_header_text);
-
+        user_type=SharedPrefManager.getInstance(getContext()).getUser().getUser_type();
         Calendar cal=Calendar.getInstance();
         Date date1 = cal.getTime();
 
@@ -481,7 +482,7 @@ public class All_Students_For_Attendance_History extends Fragment {
             holder.cause.setVisibility(GONE);
             holder.cause_li.setVisibility(GONE);
             holder.id.setText(memberInfo.id);
-            if(!memberInfo.image_path.equalsIgnoreCase("null")){
+            if(!memberInfo.image_path.equalsIgnoreCase("null")&&memberInfo.image_path.length()>0){
 
 
                 Picasso.get().load(memberInfo.image_path).placeholder(R.drawable.male_profile).into(holder.profile);
@@ -495,10 +496,20 @@ public class All_Students_For_Attendance_History extends Fragment {
                 @Override
                 public void onClick(View view) {
 
-                    Intent tnt=new Intent(getContext(),Attendence_History_Canlander_View_For_Authority.class);
-                    tnt.putExtra("id",memberInfo.id);
-                    tnt.putExtra("name",memberInfo.student_name);
-                    startActivity(tnt);
+                    if(user_type.equalsIgnoreCase("Teacher")){
+                        Intent tnt=new Intent(getContext(), Attendence_History_Canlander_View_For_Teacher.class);
+                        tnt.putExtra("id",memberInfo.id);
+                        tnt.putExtra("name",memberInfo.student_name);
+                        startActivity(tnt);
+                    }
+                    else{
+
+                        Intent tnt=new Intent(getContext(),Attendence_History_Canlander_View_For_Authority.class);
+                        tnt.putExtra("id",memberInfo.id);
+                        tnt.putExtra("name",memberInfo.student_name);
+                        startActivity(tnt);
+                    }
+
                 }
             });
 
@@ -571,7 +582,7 @@ public class All_Students_For_Attendance_History extends Fragment {
             holder.id.setText(memberInfo.id);
             holder.cause.setVisibility(GONE);
 
-            if(!memberInfo.image_path.equalsIgnoreCase("null")){
+            if(!memberInfo.image_path.equalsIgnoreCase("null")&&memberInfo.image_path.length()>0){
 
 
                 Picasso.get().load(memberInfo.image_path).placeholder(R.drawable.male_profile).into(holder.profile);

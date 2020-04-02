@@ -89,19 +89,39 @@
                     android:background="#03188B"
                     android:gravity="center"
                     android:layout_height="60dp">
-                    <EditText
-                        android:id="@+id/search"
-                        android:layout_margin="10dp"
-                        android:padding="8dp"
-                        android:textSize="15sp"
-                        android:fontFamily="serif"
-                        android:imeOptions="normal"
-                        android:hint="Search By Name"
-                        android:background="@drawable/edit_back3"
-                        android:layout_weight="1"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                    </EditText>
+                        android:layout_weight="1"
+                        android:background="#19106B"
+                        android:layout_height="60dp">
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_margin="10dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".8">
+                            <EditText
+                                android:id="@+id/search"
+                                android:textSize="12sp"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:fontFamily="serif"
+                                android:imeOptions="flagNoExtractUi|actionNext"
+                                android:hint="Search Student"
+                                android:background="@drawable/edit_back3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </EditText>
+                            <Button
+                                android:id="@+id/search_btn"
+                                android:backgroundTint="#39056D"
+                                android:background="@drawable/search"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="25dp"
+                                android:layout_margin="8dp"
+                                android:layout_height="match_parent">
+                            </Button>
+                        </RelativeLayout>
+                    </LinearLayout>
                     <Button
                         android:id="@+id/delete"
                         android:background="@drawable/delete2"
@@ -127,6 +147,17 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/total_student"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:background="#247C04"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:text="Total Students : 80"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        </TextView>
         <TextView
             android:visibility="gone"
             android:id="@+id/no_item"

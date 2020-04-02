@@ -8,15 +8,84 @@
     android:orientation="vertical"
     tools:context=".Authority.Exam_Wise_Result">
 
-    <TextView
-        android:id="@+id/exam_type"
-        android:layout_marginLeft="20dp"
-        android:text="Monthly Exam"
-        android:textColor="@color/blue"
-        android:gravity="center"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        android:weightSum="2"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/exam_type"
+                    android:layout_marginLeft="20dp"
+                    android:text="Monthly Exam"
+                    android:textColor="@color/blue"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="end|center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="140dp"
+                    android:layout_marginRight="20dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_height="40dp"
+                    android:background="@drawable/editback2"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:theme="@style/MySpinner"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                </RelativeLayout>
+                <Button
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/download_pdf"
+                    android:layout_gravity="center_vertical"
+                    android:text="Download CSV"
+                    android:textSize="12sp"
+                    android:background="@drawable/editback2"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp">
+                </Button>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -104,7 +173,7 @@
                     <LinearLayout
                         android:background="@drawable/table_border4"
                         android:orientation="horizontal"
-                        android:layout_width="1250dp"
+                        android:layout_width="1300dp"
                         android:layout_height="40dp">
                         <LinearLayout
                             android:orientation="vertical"
@@ -359,6 +428,17 @@
                         </TextView>
                         <TextView
                             android:text="GP"
+                            android:gravity="center"
+                            android:background="@drawable/table_cell"
+                            android:textColor="@color/table_header_text_color"
+                            android:textSize="@dimen/table_header_text_size"
+                            android:textAppearance="@style/table_header_text_style"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                        </TextView>
+                        <TextView
+                            android:text="Upload Date"
                             android:gravity="center"
                             android:background="@drawable/table_cell"
                             android:textColor="@color/table_header_text_color"

@@ -24,8 +24,12 @@ public class Result_item_info {
     public String objective_total;
     public String practical_total;
     public String publisher_id;
+    public String weight;
+    public String total_in_weight;
+    public String total_in_100;
+    public String date;
 
-    public Result_item_info(String id,String subject_name, String total_marks,String subjective_total,String objective_total,String practical_total, String subjective_highest, String objective_highest, String practical_highest,String highest_total_3, String obtain_marks_subjective, String obtain_marks_objective, String obtain_marks_practical,String obtain_total_3, String total_in_percentage,String tutorial, String total_100, String highest_100, String lp, String gp,String publisher_id) {
+    public Result_item_info(String id,String subject_name, String total_marks,String subjective_total,String objective_total,String practical_total, String subjective_highest, String objective_highest, String practical_highest,String highest_total_3, String obtain_marks_subjective, String obtain_marks_objective, String obtain_marks_practical,String obtain_total_3, String total_in_percentage,String tutorial, String total_100, String highest_100, String lp, String gp,String publisher_id,String date) {
 
         this.id=id;
         this.subject_name = subject_name;
@@ -48,6 +52,33 @@ public class Result_item_info {
         this.lp = lp;
         this.gp = gp;
         this.publisher_id=publisher_id;
+        this.date=date;
+    }
+
+    public Result_item_info(String id,String subject_name, String total_marks,String subjective_total,String objective_total,String practical_total, String subjective_highest, String objective_highest, String practical_highest,String highest_total_3, String obtain_marks_subjective, String obtain_marks_objective, String obtain_marks_practical,String obtain_total_3, String weight,String total_in_weight, String total_in_100, String lp, String gp,String publisher_id,String date) {
+
+        this.id=id;
+        this.subject_name = subject_name;
+        this.total_marks = total_marks;
+        this.subjective_total=subjective_total;
+        this.objective_total=objective_total;
+        this.practical_total=practical_total;
+        this.subjective_highest = subjective_highest;
+        this.objective_highest = objective_highest;
+        this.practical_highest = practical_highest;
+        this.obtain_marks_subjective = obtain_marks_subjective;
+        this.obtain_marks_objective = obtain_marks_objective;
+        this.obtain_marks_practical = obtain_marks_practical;
+        this.total_in_percentage = total_in_percentage;
+        this.highest_total_3 = highest_total_3;
+        this.obtain_total_3 = obtain_total_3;
+        this.weight = weight;
+        this.total_in_weight = total_in_weight;
+        this.total_in_100 = total_in_100;
+        this.lp = lp;
+        this.gp = gp;
+        this.publisher_id=publisher_id;
+        this.date=date;
     }
 
 

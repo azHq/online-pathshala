@@ -67,13 +67,14 @@ public class All_Sections extends AppCompatActivity implements View.OnTouchListe
     TextView no_item;
     String medium,shift_name;
     AlertDialog alertDialog2;
-    String class_id,activity_type,class_name;
+    String class_id,activity_type,class_name,medium_name;
     AlertDialog alertDialog3;
     String teacher_name,teacher_id;
     ArrayList<Member> members=new ArrayList<>();
     ArrayList<String> section_names=new ArrayList<>();
     float posX=0;
     float posY=0;
+    TextView tv_class_name,tv_section_name,tv_medium_name,total_student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,17 +82,31 @@ public class All_Sections extends AppCompatActivity implements View.OnTouchListe
 
         class_id=getIntent().getStringExtra("class_id");
         class_name=getIntent().getStringExtra("class_name");
+        medium_name=getIntent().getStringExtra("medium_name");
         activity_type=getIntent().getStringExtra("type");
         dragView = findViewById(R.id.fab);
         frameLayout=findViewById(R.id.frame_layout);
         recyclerView=findViewById(R.id.recycle);
         no_item=findViewById(R.id.no_item);
+        tv_class_name=findViewById(R.id.class_name);
+        tv_medium_name=findViewById(R.id.medium);
+
+        tv_class_name.setText("Class : "+class_name);
+        tv_medium_name.setText("Medium : "+medium_name);
         dragView.setOnTouchListener(this);
         progressDialog=new ProgressDialog(All_Sections.this);
         progressDialog.setMessage("Please wait...");
-        getAllMemberData();
         get_all_teacher_data("Teacher",Constant_URL.get_all_data_url);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sections=new ArrayList<>();
+        getAllMemberData();
+    }
+
+
     public void getAllMemberData(){
 
 
@@ -223,6 +238,9 @@ public class All_Sections extends AppCompatActivity implements View.OnTouchListe
                     Intent tnt=new Intent(getApplicationContext(),All_Student_In_A_Section.class);
                     tnt.putExtra("class_id",class_id);
                     tnt.putExtra("section_id",memberInfo.id);
+                    tnt.putExtra("class_name",class_name);
+                    tnt.putExtra("section_name",memberInfo.section_name);
+                    tnt.putExtra("medium_name",medium_name);
                     startActivity(tnt);
                 }
                 else if(activity_type.equalsIgnoreCase("subject")){

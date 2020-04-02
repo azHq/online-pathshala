@@ -70,12 +70,12 @@ public class Teacher_Classes_For_Attendence extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ActionBar actionBar;
     String activity_type="";
+    String user_type="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher__classes__for__attendence);
-
         activity_type=getIntent().getStringExtra("activity_type");
         actionBar=getSupportActionBar();
         frameLayout=findViewById(R.id.frame_layout);

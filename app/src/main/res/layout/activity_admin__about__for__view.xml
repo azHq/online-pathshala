@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Authority.Admin_About_For_View">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:background="@drawable/logo"
+                android:layout_height="200dp">
+
+            </ImageView>
+            <LinearLayout
+                android:background="#3E2723"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@id/error"
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#3E2723"
+                    android:gravity="center"
+                    android:text="About Your Compnay"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp">
+                </TextView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/company"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Here Write About Your Compnay"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+            <LinearLayout
+                android:background="#3E2723"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@id/error"
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:layout_height="50dp"
+                    android:background="#3E2723"
+                    android:gravity="center"
+                    android:text="About Your Service"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp">
+                </TextView>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/service"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Here Write About Your Service"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

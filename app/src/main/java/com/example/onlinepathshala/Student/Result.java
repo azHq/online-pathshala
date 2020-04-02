@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.onlinepathshala.Final_Result_View_For_All;
 import com.example.onlinepathshala.R;
 import com.example.onlinepathshala.SharedPrefManager;
 
@@ -29,6 +30,7 @@ public class Result extends Fragment {
         Button monthly_test=view.findViewById(R.id.monthly_test);
         Button half_yearly_test=view.findViewById(R.id.half_yearly);
         Button final_exam=view.findViewById(R.id.final_exam);
+        Button final_result=view.findViewById(R.id.final_result);
         class_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,7 +38,7 @@ public class Result extends Fragment {
                 Intent tnt=new Intent(getContext(), Other_Result.class);
                 tnt.putExtra("exam_type","Class Test");
                 tnt.putExtra("student_id", SharedPrefManager.getInstance(getContext()).getUser().getId());
-                tnt.putExtra("class_id","1");
+                tnt.putExtra("class_id",SharedPrefManager.getInstance(getContext()).get_student_info().class_id);
                 startActivity(tnt);
 
             }
@@ -48,7 +50,7 @@ public class Result extends Fragment {
                 Intent tnt=new Intent(getContext(),Other_Result.class);
                 tnt.putExtra("exam_type","Monthly Test");
                 tnt.putExtra("student_id", SharedPrefManager.getInstance(getContext()).getUser().getId());
-                tnt.putExtra("class_id","1");
+                tnt.putExtra("class_id",SharedPrefManager.getInstance(getContext()).get_student_info().class_id);
                 startActivity(tnt);
             }
         });
@@ -59,7 +61,7 @@ public class Result extends Fragment {
                 Intent tnt=new Intent(getContext(),Other_Result.class);
                 tnt.putExtra("exam_type","Half Yearly");
                 tnt.putExtra("student_id", SharedPrefManager.getInstance(getContext()).getUser().getId());
-                tnt.putExtra("class_id","1");
+                tnt.putExtra("class_id",SharedPrefManager.getInstance(getContext()).get_student_info().class_id);
                 startActivity(tnt);
             }
         });
@@ -67,10 +69,22 @@ public class Result extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent tnt=new Intent(getContext(),Final_Result.class);
+                Intent tnt=new Intent(getContext(),Other_Result.class);
                 tnt.putExtra("exam_type","Final Exam");
                 tnt.putExtra("student_id", SharedPrefManager.getInstance(getContext()).getUser().getId());
-                tnt.putExtra("class_id","1");
+                tnt.putExtra("class_id",SharedPrefManager.getInstance(getContext()).get_student_info().class_id);
+                startActivity(tnt);
+            }
+        });
+        final_result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent tnt=new Intent(getContext(), Final_Result_View_For_All.class);
+                tnt.putExtra("exam_type","Final Exam");
+                tnt.putExtra("student_id", SharedPrefManager.getInstance(getContext()).getUser().getId());
+                tnt.putExtra("class_id",SharedPrefManager.getInstance(getContext()).get_student_info().class_id);
+                tnt.putExtra("section_id",SharedPrefManager.getInstance(getContext()).get_student_info().section_id);
                 startActivity(tnt);
             }
         });

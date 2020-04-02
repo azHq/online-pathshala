@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Teacher.All_Student2">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:weightSum="2"
@@ -69,6 +70,38 @@
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#19106B"
+        android:layout_height="60dp">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1">
+            <EditText
+                android:id="@+id/search"
+                android:textSize="12sp"
+                android:paddingStart="10dp"
+                android:gravity="center_vertical"
+                android:fontFamily="serif"
+                android:imeOptions="flagNoExtractUi|actionNext"
+                android:hint="Search Student"
+                android:background="@drawable/edit_back3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </EditText>
+            <Button
+                android:id="@+id/search_btn"
+                android:backgroundTint="#39056D"
+                android:background="@drawable/search"
+                android:layout_alignParentEnd="true"
+                android:layout_width="25dp"
+                android:layout_margin="8dp"
+                android:layout_height="match_parent">
+            </Button>
+        </RelativeLayout>
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"

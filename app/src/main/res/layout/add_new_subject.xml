@@ -10,7 +10,7 @@
         android:weightSum="3"
         android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="435dp">
 
         <LinearLayout
             android:layout_weight="2"
@@ -18,13 +18,12 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_margin="10dp"
-            android:layout_height="0dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_weight="1"
-                android:background="#684E18"
+                android:background="#745923"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="80dp">
 
                 <TextView
                     android:gravity="center"
@@ -40,37 +39,268 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_weight="1.4"
                 android:orientation="vertical"
-                android:layout_height="0dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight=".6"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="6dp"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif"
-                    android:textColor="@color/coffe"
-                    android:text="Please Subject Name"
-                    android:textStyle="bold" />
-
+                android:layout_height="420dp">
                 <EditText
                     android:id="@+id/class_name"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight=".6"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="6dp"
+                    android:textSize="14sp"
                     android:layout_marginStart="6dp"
-                    android:background="@drawable/edittextback"
+                    android:background="@drawable/editback2"
                     android:gravity="center_vertical"
                     android:hint="Enter Subject Name.."
                     android:textColorHint="@color/coffe"
-                    android:paddingStart="6dp"
+                    android:paddingStart="10dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="#ea282323" />
+
+                <RelativeLayout
+                    android:id="@+id/duration_layout"
+                    android:layout_width="220dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_below="@+id/time"
+                    android:layout_height="40dp"
+                    android:background="@drawable/editback2"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/total_marks"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:theme="@style/MySpinner"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/option1"
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="11sp"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Class Test Weight"
+                            android:id="@+id/text1"
+                            android:background="@drawable/editback2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="40dp">
+                        </TextView>
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:textColorHint="#1D5A8F"
+                            android:layout_below="@+id/time"
+                            android:layout_height="40dp"
+                            android:background="@drawable/editback2"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/class_test"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:theme="@style/MySpinner"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="4dp"
+                                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/option2"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="11sp"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Monthly Test Weight"
+                            android:background="@drawable/editback2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="40dp">
+                        </TextView>
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:textColorHint="#1D5A8F"
+                            android:layout_below="@+id/time"
+                            android:layout_height="40dp"
+                            android:background="@drawable/editback2"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/monthly_test"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:theme="@style/MySpinner"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="4dp"
+                                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/option3"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="11sp"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Half Yearly Weight"
+                            android:background="@drawable/editback2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="40dp">
+                        </TextView>
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:textColorHint="#1D5A8F"
+                            android:layout_below="@+id/time"
+                            android:layout_height="40dp"
+                            android:background="@drawable/editback2"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/half_yearly"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:theme="@style/MySpinner"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="4dp"
+                                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/option4"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="11sp"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Final Exam Weight"
+                            android:background="@drawable/editback2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="40dp">
+                        </TextView>
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:textColorHint="#1D5A8F"
+                            android:layout_below="@+id/time"
+                            android:layout_height="40dp"
+                            android:background="@drawable/editback2"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/final_exam"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:theme="@style/MySpinner"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="4dp"
+                                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
 
             </LinearLayout>
 
@@ -90,38 +320,39 @@
         <LinearLayout
             android:weightSum="2"
             android:orientation="horizontal"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:gravity="bottom"
-            android:padding="10dp"
-            android:layout_height="0dp">
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="60dp">
 
             <Button
                 android:layout_weight="1"
                 android:id="@+id/cancel"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@drawable/signupbutton"
                 android:text="Cancel"
+                android:textSize="13sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#fbfafa"
-                android:layout_margin="6dp"
                 android:textStyle="bold" />
             <Button
                 android:id="@+id/addmember"
                 android:layout_width="0dp"
-                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:layout_height="50dp"
+                android:textSize="13sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="40dp"
                 android:background="@drawable/signupbutton"
                 android:text="Add Subject"
                 android:textColor="#fbfafa"
                 android:textStyle="bold" />
 
         </LinearLayout>
-
-
-
-    </LinearLayout>
 
 
 

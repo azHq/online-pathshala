@@ -5,19 +5,25 @@
     android:layout_height="match_parent"
     android:id="@+id/root_layout"
     tools:context=".Authority.Medium_Wise_Classes">
-    <TextView
-        android:id="@+id/no_item"
-        android:visibility="gone"
-        android:text="No Class Still Added"
-        android:gravity="center"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </TextView>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/no_item"
+            android:visibility="gone"
+            android:text="No Class Still Added"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

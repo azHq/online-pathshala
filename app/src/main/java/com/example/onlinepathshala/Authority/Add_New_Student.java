@@ -174,14 +174,22 @@ public class Add_New_Student extends AppCompatActivity {
     }
 
 
+    public String remove_country_code(String phone_number){
+        phone_number=phone_number.trim().replace("+","");
+        if(phone_number.startsWith("88")){
 
+            phone_number=phone_number.substring(2,phone_number.length()-1);
+        }
+
+        return phone_number;
+    }
     public void onSubmit(View view){
 
         student_name=et_teacher_name.getText().toString();
         email=et_email.getText().toString();
         phone_number=et_phone_number.getText().toString();
         student_id=et_student_id.getText().toString();
-
+        phone_number=remove_country_code(  phone_number);
         student_id=student_id.replaceAll("\\s","");
         email=email.replaceAll("\\s","");
         if(student_name!=null&&student_name.length()>=3&&emailValidation(email)&&phone_number_validation(phone_number)&&student_id.length()>0&&student_id.length()<=10){
@@ -221,6 +229,8 @@ public class Add_New_Student extends AppCompatActivity {
 
 
     public void add_new_user(){
+
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constant_URL.add_new_teacher_url,
                 new Response.Listener<String>() {
                     @Override

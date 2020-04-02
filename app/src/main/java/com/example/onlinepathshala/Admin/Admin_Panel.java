@@ -1,8 +1,16 @@
 package com.example.onlinepathshala.Admin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,6 +54,7 @@ import com.example.onlinepathshala.SharedPrefManager;
 import com.example.onlinepathshala.Teacher.Notification_For_Teacher;
 import com.example.onlinepathshala.VolleySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -62,7 +71,7 @@ import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
-public class Admin_Panel extends AppCompatActivity implements View.OnTouchListener {
+public class Admin_Panel extends AppCompatActivity{
 
     ArrayList<School> memberInfos=new ArrayList<>();
     RecyclerView recyclerView;
@@ -76,97 +85,192 @@ public class Admin_Panel extends AppCompatActivity implements View.OnTouchListen
     AlertDialog alertDialog,alertDialog2;
     float posX=0;
     float posY=0;
+    public DrawerLayout drawer;
+    public FragmentTransaction ft;
+    public FragmentManager fragmentManager;
+    public static Context context;
+    private int alertCount = 0;
+    public int notification=0;
+    public ActionBar actionBar;
+    TextView tv_name,tv_email;
+    CircleImageView profile_image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__panel);
-        dragView = findViewById(R.id.fab);
-        recyclerView=findViewById(R.id.recycle);
-        no_item=findViewById(R.id.no_item);
         progressDialog=new ProgressDialog(Admin_Panel.this);
         progressDialog.setMessage("Please wait...");
-        dragView.setOnTouchListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tv_name=findViewById(R.id.name);
+        tv_email=findViewById(R.id.email);
+        profile_image=findViewById(R.id.profile_image);
+        setSupportActionBar(toolbar);
+        notification=getIntent().getIntExtra("notification",0);
+        fragmentManager =getSupportFragmentManager();
+        actionBar=getSupportActionBar();
+        context=getApplicationContext();
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        getAllData();
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        ft = getSupportFragmentManager().beginTransaction();
+
+        LinearLayout profile=findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                actionBar.setTitle("Profile");
+                changeFragmentView(new Admin_Profile());
+
+            }
+        });
+        LinearLayout all_school=findViewById(R.id.all_schools);
+        all_school.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                actionBar.setTitle("All School");
+                changeFragmentView(new All_Schools());
+            }
+        });
+        LinearLayout all_authority=findViewById(R.id.all_authority);
+        all_authority.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                actionBar.setTitle("All Authority");
+                changeFragmentView(new All_Authority(actionBar));
+            }
+        });
+
+//        LinearLayout contact=findViewById(R.id.contact);
+//        contact.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                actionBar.setTitle("Contact");
+//                changeFragmentView(new Contact());
+//            }
+//        });
+        LinearLayout about=findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                actionBar.setTitle("About");
+                changeFragmentView(new About());
+            }
+        });
+
+        actionBar.setTitle("All Schools");
+        changeFragmentView(new All_Schools());
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        memberInfos=new ArrayList<>();
-        getAllMemberData();
+    public void changeFragmentView(Fragment fragment){
+
+        fragmentManager =getSupportFragmentManager();
+        fragmentManager.popBackStack();
+        int count = fragmentManager.getBackStackEntryCount();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment)
+                .addToBackStack(null).commit();
+        drawer.closeDrawer(GravityCompat.START);
     }
 
-    public void getAllMemberData(){
-
+    public void getAllData(){
 
         JSONArray postparams = new JSONArray();
-        postparams.put("Authority");
+        postparams.put("admin");
         postparams.put("online_pathshala");
-
+        postparams.put(SharedPrefManager.getInstance(getApplicationContext()).getUser().getId());
         progressDialog.show();
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.POST,
-                Constant_URL.get_all_school,postparams,
+                Constant_URL.select_single_row,postparams,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
 
-                        System.out.println("Response: "+response);
-                        String string= "";
+                        String string;
+                        String school_name=SharedPrefManager.getInstance(getApplicationContext()).getUser().getSchool_name();
                         try {
-                            string = response.getString(0);
+                            string=response.getString(0);
+
+                            if(!string.contains("no item")){
+
+                                for(int i=0;i<response.length();i++){
+
+                                    JSONObject member = null;
+                                    try {
+                                        member = response.getJSONObject(i);
+                                        String id = member.getString("id");
+                                        String name=member.getString("name");
+
+                                        if(member.has("email")){
+                                            String email=member.getString("email");
+                                            tv_email.setText(email);
+                                        }
+                                        else{
+
+                                        }
+
+
+
+                                        if(member.has("image_path")){
+                                           String  image_path=member.getString("image_path");
+                                            if(!image_path.equalsIgnoreCase("null")){
+
+
+                                                Picasso.get().load(image_path).placeholder(R.drawable.profile2).into(profile_image);
+                                            }
+                                        }
+
+
+
+
+
+
+
+                                        tv_name.setText(name);
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+
+                                progressDialog.dismiss();
+                            }
+                            else{
+
+                                progressDialog.dismiss();
+                            }
+
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                        memberInfos.clear();
-                        if(!string.contains("no item")){
-
-                            for(int i=0;i<response.length();i++){
-
-                                JSONObject member = null;
-                                try {
-                                    member = response.getJSONObject(i);
-                                    String authority_id = member.getString("id");
-                                    String school_name = member.getString("school_name");
-                                    String school_id = member.getString("school_id");
-                                    String authority_name = member.getString("authority_name");
-                                    String image_path=member.getString("image_path");
-                                    String status=member.getString("account_status");
-
-                                    String email = member.getString("email");
-                                    String phone=member.getString("phone_number");
-                                    String date=member.getString("create_at");
-                                    String device_id=member.getString("device_id");
-                                    memberInfos.add(new School(school_id,school_name,authority_id,authority_name,email,phone,date,status,image_path,device_id));
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            no_item.setVisibility(GONE);
-                            RecycleAdapter recycleAdapter=new RecycleAdapter(memberInfos);
-                            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                            recyclerView.setAdapter(recycleAdapter);
-                            progressDialog.dismiss();
-                        }
-                        else{
-
-                            no_item.setVisibility(VISIBLE);
-                        }
-
-
                     }
+
+
                 },
                 new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error){
 
-                        Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
+
                         progressDialog.dismiss();
                     }
                 })
 
-            {
+        {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
 
@@ -179,222 +283,7 @@ public class Admin_Panel extends AppCompatActivity implements View.OnTouchListen
             }
         };
         VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
-
-
     }
-
-
-
-    public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewAdapter>{
-
-        ArrayList<School> memberInfos;
-        public RecycleAdapter(ArrayList<School> memberInfos){
-            this.memberInfos=memberInfos;
-        }
-        public  class ViewAdapter extends RecyclerView.ViewHolder implements View.OnLongClickListener {
-
-            View mView;
-            Button active,de_active;
-            LinearLayout linearLayout;
-            ImageView school_image;
-            TextView authority_name,authority_id,school_name,id,status;
-            SwitchCompat stw_acc;
-            public ViewAdapter(View itemView) {
-                super(itemView);
-                itemView.setOnLongClickListener(this);
-                mView=itemView;
-                school_image=mView.findViewById(R.id.school_image);
-                status=mView.findViewById(R.id.status);
-                linearLayout=mView.findViewById(R.id.view_profile);
-
-                id=mView.findViewById(R.id.id);
-                school_name=mView.findViewById(R.id.school_name);
-                authority_name=mView.findViewById(R.id.authority_name);
-                authority_id=mView.findViewById(R.id.authority_id);
-                stw_acc=mView.findViewById(R.id.swith);
-
-            }
-            @Override
-            public boolean onLongClick(View view) {
-
-
-                int position =getLayoutPosition();
-                School memberInfo=memberInfos.get(position);
-                showOptionDialog(memberInfo.authority_id,memberInfo.school_id);
-                return true;
-            }
-
-
-        }
-        @NonNull
-        @Override
-        public ViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.each_school,parent,false);
-            return new ViewAdapter(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull ViewAdapter holder, final int position) {
-
-
-            School memberInfo=memberInfos.get(position);
-            holder.id.setText(memberInfo.school_id);
-            holder.school_name.setText(memberInfo.school_name);
-            holder.authority_id.setText(memberInfo.authority_id);
-            holder.authority_name.setText(memberInfo.authority_name);
-            if(!memberInfo.image.equalsIgnoreCase("null")){
-
-                Picasso.get().load(memberInfo.image).placeholder(R.drawable.teacher_panel_header).into(holder.school_image);
-            }
-            if(memberInfo.account_status.equalsIgnoreCase("1")){
-
-                holder.status.setText("Active");
-                holder.stw_acc.setChecked(true);
-            }
-            else {
-                holder.status.setText("De-Active");
-                holder.stw_acc.setChecked(false);
-            }
-            holder.stw_acc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-                    if(b){
-
-                        holder.status.setText("Active");
-                    }
-                    else{
-
-                        holder.status.setText("De-Active");
-                    }
-                }
-            });
-
-            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Intent intent=new Intent(getApplicationContext(),School_Profile.class);
-                    intent.putExtra("school_id",memberInfo.school_id);
-                    intent.putExtra("school_name",memberInfo.school_name);
-                    intent.putExtra("auth_id",memberInfo.authority_id);
-                    intent.putExtra("auth_name",memberInfo.authority_name);
-                    intent.putExtra("image_path",memberInfo.image);
-                    intent.putExtra("phone_number",memberInfo.phone_number);
-                    intent.putExtra("email",memberInfo.email);
-                    intent.putExtra("device_id",memberInfo.device_id);
-                    intent.putExtra("status",memberInfo.account_status);
-                    intent.putExtra("date",memberInfo.joining_date);
-                    startActivity(intent);
-                }
-            });
-
-            holder.stw_acc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-                    if(b){
-
-                        holder.status.setText("Active");
-                        showDialog("Are you sure to Active this account ?","1",memberInfo.authority_id);
-                    }
-                    else{
-
-                        holder.status.setText("De-Active");
-                        showDialog("Are you sure to De-active this account ?","0",memberInfo.authority_id);
-                    }
-                }
-            });
-
-
-
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return memberInfos.size();
-        }
-
-
-
-    }
-    public void showDialog(String message,String value,String id){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(Admin_Panel.this);
-        View view = getLayoutInflater().inflate(R.layout.profile_edit_dialogbox2, null);
-        TextView tv_title = view.findViewById(R.id.title);
-        tv_title.setText(message);
-        Button cancel = view.findViewById(R.id.cancel);
-        Button confirm = view.findViewById(R.id.confirm);
-        builder.setView(view);
-        final AlertDialog dialog = builder.show();
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-                progressDialog.show();
-                update(value, "account_status",id);
-
-            }
-        });
-    }
-
-
-
-
-
-
-    public void update(final String value, final String column,String id){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constant_URL.change_account_status,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        progressDialog.dismiss();
-
-
-
-                        if (response.contains("success")) {
-
-                            Toast.makeText(getApplicationContext(),column+" Updated Successfully", Toast.LENGTH_SHORT).show();
-
-
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Fail to update", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(),"Check Internet Connection", Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("value", value);
-                params.put("id",id);
-                params.put("column",column);
-                params.put("table", "Authority");
-                params.put("db","online_pathshala");
-                return params;
-            }
-        };
-
-        VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
-    }
-
-
-
-
 
 
 
@@ -424,48 +313,7 @@ public class Admin_Panel extends AppCompatActivity implements View.OnTouchListen
         return super.onPrepareOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onTouch(View view, MotionEvent event) {
 
-
-
-
-        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        DisplayMetrics metrics = new DisplayMetrics();
-        display.getMetrics(metrics);
-        int width = metrics.widthPixels;
-        int height = metrics.heightPixels-view.getHeight();
-        switch (event.getActionMasked()) {
-            case MotionEvent.ACTION_DOWN:
-                dX = view.getX() - event.getRawX();
-                dY = view.getY() - event.getRawY();
-                posX=view.getX();
-                posY=view.getY();
-                lastAction = MotionEvent.ACTION_DOWN;
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-
-                if(event.getRawY()<(height-view.getHeight()/1.2)&&event.getRawY()>view.getHeight()*2) view.setY(event.getRawY()+ dY);
-                if(event.getRawX()<(width-view.getWidth()/1.2)&&event.getRawX()>view.getWidth()/1.3) view.setX(event.getRawX() + dX);
-                if(Math.abs(view.getX()-posX)>=50||Math.abs(view.getY()-posY)>=50){
-                    lastAction = MotionEvent.ACTION_MOVE;
-                }
-                break;
-
-            case MotionEvent.ACTION_UP:
-                if (lastAction == MotionEvent.ACTION_DOWN) {
-                    Intent tnt = new Intent(getApplicationContext(), Add_School.class);
-                    startActivity(tnt);
-                }
-                break;
-
-            default:
-                return false;
-        }
-        return true;
-    }
 
 
     public void getNumberOfNotificationUnSeen(){
@@ -544,101 +392,6 @@ public class Admin_Panel extends AppCompatActivity implements View.OnTouchListen
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-
-    public void showOptionDialog(final String id,final String school_id){
-
-        AlertDialog.Builder builder=new AlertDialog.Builder(Admin_Panel.this);
-        View view=getLayoutInflater().inflate(R.layout.options_dialog,null);
-        builder.setView(view);
-        TextView assign_teacher=view.findViewById(R.id.assign_teacher);
-        TextView edit=view.findViewById(R.id.edit);
-        TextView delete=view.findViewById(R.id.delete);
-        alertDialog2=builder.show();
-        assign_teacher.setVisibility(View.GONE);
-        edit.setVisibility(GONE);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                alertDialog2.dismiss();
-                showDeleteDialogBox(id,school_id);
-            }
-        });
-
-
-    }
-
-
-    public void showDeleteDialogBox(final String id,final String school_id){
-
-        AlertDialog.Builder alert=new AlertDialog.Builder(Admin_Panel.this);
-        View view=getLayoutInflater().inflate(R.layout.delete_dialog_box,null);
-        Button yes=view.findViewById(R.id.yes);
-        Button no=view.findViewById(R.id.no);
-        yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                alertDialog.dismiss();
-                progressDialog.show();
-                deleteItem(id,school_id);
-            }
-        });
-        no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                alertDialog.dismiss();
-            }
-        });
-        alert.setView(view);
-        alertDialog= alert.show();
-
-
-    }
-
-    public void deleteItem(final String id,final String school_id){
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constant_URL.delete_authority,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        progressDialog.dismiss();
-
-
-
-                        if (response.contains("success")) {
-
-                            Toast.makeText(getApplicationContext(),"Student Deleted Successfully", Toast.LENGTH_SHORT).show();
-                            getAllMemberData();
-
-                        } else {
-                            Toast.makeText(getApplicationContext(),"Fail To Delete", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(),"Connect Error", Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("id",id);
-                params.put("table", "Authority");
-                params.put("db","online_pathshala");
-                params.put("school_id",school_id);
-
-                return params;
-            }
-        };
-
-        VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 
 

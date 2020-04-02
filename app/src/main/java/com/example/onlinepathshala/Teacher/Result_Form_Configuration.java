@@ -214,7 +214,15 @@ public class Result_Form_Configuration extends AppCompatActivity {
                     textView.setTextColor(Color.WHITE);
                 }
                 exam_type=(String)exam_types.get(i);
-                get_all_exams("Exam", Constant_URL.get_type_wise_exam,class_id,section_id,exam_type);
+                if(!exam_type.equalsIgnoreCase("Final Exam")){
+
+                    get_all_exams("Exam", Constant_URL.get_type_wise_exam,class_id,section_id,exam_type);
+                }
+                else{
+                    examinfos2.clear();
+                    examinfos2.add(new Exam("-1","final exam","",""));
+                    sp_exam_name.setAdapter(new CustomAdapter(getApplicationContext(),3,examinfos2));
+                }
 
             }
 
@@ -374,7 +382,13 @@ public class Result_Form_Configuration extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Exam Created Successfully", Toast.LENGTH_SHORT).show();
                             get_all_exams("Exam", Constant_URL.get_type_wise_exam,class_id,section_id,exam_type);
                         }
-                        else {
+                        else if(response.contains("exist")){
+
+
+                            sp_exam_name.setSelection(0);
+                            Toast.makeText(getApplicationContext(), "Exam Name Already Exist", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
 
                             Toast.makeText(getApplicationContext(), "Fail To Create Exam", Toast.LENGTH_SHORT).show();
                         }

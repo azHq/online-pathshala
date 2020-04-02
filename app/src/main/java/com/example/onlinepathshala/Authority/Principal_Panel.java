@@ -31,11 +31,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.onlinepathshala.Admin.Log_In;
 import com.example.onlinepathshala.Constant_URL;
 import com.example.onlinepathshala.MainActivity;
-import com.example.onlinepathshala.Notification;
 import com.example.onlinepathshala.R;
 import com.example.onlinepathshala.SharedPrefManager;
 import com.example.onlinepathshala.Teacher.Result_Form_Configuration;
-import com.example.onlinepathshala.Teacher.Teacher_Dashboard;
 import com.example.onlinepathshala.VolleySingleton;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
@@ -197,7 +195,7 @@ public class Principal_Panel extends AppCompatActivity implements NavigationView
 
 
             if(actionBar!=null) actionBar.setTitle("View Result");
-            fragment=new View_Result();
+            fragment=new View_Result_Form_Config();
             changeFragmentView(fragment);
 
             //startActivity(new Intent(getApplicationContext(),View_Result3.class));
@@ -222,7 +220,7 @@ public class Principal_Panel extends AppCompatActivity implements NavigationView
         else if (id == R.id.upload_result) {
 
 
-           startActivity(new Intent(getApplicationContext(),Result_Form_Configuration2.class));
+           startActivity(new Intent(getApplicationContext(), Result_Form_Configuration2.class));
 
         }
         else if (id == R.id.routine) {

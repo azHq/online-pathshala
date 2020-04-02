@@ -295,12 +295,21 @@ public class Add_New_Teacher extends AppCompatActivity {
         return phone_number.matches(pattern);
     }
 
+    public String remove_country_code(String phone_number){
+        phone_number=phone_number.trim().replace("+","");
+        if(phone_number.startsWith("88")){
+
+            phone_number=phone_number.substring(2,phone_number.length()-1);
+        }
+
+        return phone_number;
+    }
     public void onSubmit(View view){
 
         teacher_name=et_teacher_name.getText().toString();
         email=et_email.getText().toString();
         phone_number=et_phone_number.getText().toString();
-
+        phone_number=remove_country_code(  phone_number);
 
         if(teacher_name.length()>=3&&emailValidation()&&phone_number_validation(phone_number)){
 

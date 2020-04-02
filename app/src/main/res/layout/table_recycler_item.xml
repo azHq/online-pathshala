@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="1250dp"
+    android:orientation="horizontal" android:layout_width="1300dp"
     android:layout_height="25dp">
     <LinearLayout
         android:layout_width="0dp"
@@ -208,6 +208,17 @@
     </TextView>
     <TextView
         android:id="@+id/gp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/table_body_text_size"
+        android:textColor="@color/table_body_text_color"
+        android:textAppearance="@style/table_body_text_style"
+        android:layout_width="0dp"
+        android:background="@drawable/table_cell"
+        android:layout_height="match_parent">
+    </TextView>
+    <TextView
+        android:id="@+id/date"
         android:layout_weight="1"
         android:gravity="center"
         android:textSize="@dimen/table_body_text_size"

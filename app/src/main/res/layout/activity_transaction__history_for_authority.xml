@@ -9,185 +9,286 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="50dp">
         <androidx.appcompat.widget.Toolbar
             android:background="#FD37AA05"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-            <LinearLayout
-                android:gravity="right"
-                android:orientation="horizontal"
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="@drawable/editback2"
-                        android:layout_width="wrap_content"
-                        android:backgroundTint="#DC9E3B05"
-                        android:layout_height="match_parent">
-                        <Spinner
-                            android:theme="@style/MatchSpinnerTheme"
-                            android:id="@+id/transaction_type"
-                            android:backgroundTint="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-                        </Spinner>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:background="@drawable/editback2"
-                        android:layout_width="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:backgroundTint="#BE052586"
-                        android:layout_height="match_parent">
-                        <Spinner
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/search_type"
-                            android:theme="@style/MatchSpinnerTheme"
-                            android:backgroundTint="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-                        </Spinner>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:gravity="right"
-                        android:layout_marginStart="5dp"
-                        android:background="@drawable/editback2"
-                        android:backgroundTint="#D23A0679"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-                        <Spinner
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:id="@+id/debit_or_credit"
-                            android:theme="@style/MatchSpinnerTheme"
-                            android:spinnerMode="dropdown"
-                            android:backgroundTint="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-                        </Spinner>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:id="@+id/show_monthly_transaction"
                     android:gravity="right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="@drawable/editback2"
-                        android:layout_width="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:backgroundTint="#BE7B089B"
-                        android:layout_height="match_parent">
-                        <Spinner
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/month"
-                            android:theme="@style/MatchSpinnerTheme"
-                            android:backgroundTint="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-                        </Spinner>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:background="@drawable/editback2"
-                        android:layout_width="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:backgroundTint="#BE86054C"
-                        android:layout_height="match_parent">
-                        <Spinner
-                            android:id="@+id/year"
-                            android:theme="@style/MatchSpinnerTheme"
-                            android:backgroundTint="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-                        </Spinner>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/show_yearly_transaction"
-                    android:gravity="right"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/editback2"
-                    android:backgroundTint="#D2078EA0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <Spinner
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:id="@+id/year2"
-                        android:theme="@style/MatchSpinnerTheme"
-                        android:spinnerMode="dropdown"
-                        android:backgroundTint="@color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-                    </Spinner>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/show_daily_transaction"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:weightSum="3"
-                    android:background="@drawable/editback2"
-                    android:backgroundTint="#CE9B1605"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:text="Day"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_height="0dp">
-                    </TextView>
-                    <TextView
-                        android:id="@+id/day"
-                        android:text="12.12.2010"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_height="0dp">
-                    </TextView>
-                    <Button
-                        android:background="@drawable/dropdown"
-                        android:layout_width="30dp"
-                        android:layout_weight="1"
-                        android:clickable="false"
-                        android:layout_height="0dp">
-                    </Button>
-                </LinearLayout>
-                <LinearLayout
                     android:orientation="horizontal"
-                    android:id="@+id/show_all_transaction"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:background="@drawable/editback2"
+                            android:layout_width="170dp"
+                            android:backgroundTint="#DC9E3B05"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_width="170dp"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="#DC9E3B05"
+                                android:background="@drawable/border_back"
+                                android:orientation="horizontal">
+                                <Spinner
+                                    android:id="@+id/transaction_type"
+                                    android:backgroundTint="@color/white"
+                                    android:layout_centerVertical="true"
+                                    android:background="@android:color/transparent"
+                                    android:layout_width="160dp"
+                                    android:spinnerMode="dropdown"
+                                    android:theme="@style/MatchSpinnerTheme"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+                                </Spinner>
+
+                                <Button
+                                    android:layout_width="31dp"
+                                    android:layout_height="27dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginRight="4dp"
+                                    android:clickable="false"
+                                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:backgroundTint="@color/white" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:background="@drawable/editback2"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:backgroundTint="#BE052586"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="#BE052586"
+                                android:background="@drawable/border_back"
+                                android:orientation="horizontal">
+                                <Spinner
+                                    android:id="@+id/search_type"
+                                    android:backgroundTint="@color/white"
+                                    android:layout_centerVertical="true"
+                                    android:theme="@style/MatchSpinnerTheme"
+                                    android:background="@android:color/transparent"
+                                    android:layout_width="140dp"
+                                    android:spinnerMode="dropdown"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+                                </Spinner>
+
+                                <Button
+                                    android:layout_width="31dp"
+                                    android:layout_height="27dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginRight="4dp"
+                                    android:clickable="false"
+                                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:backgroundTint="@color/white" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="right"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/editback2"
+                            android:backgroundTint="#D23A0679"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="#D23A0679"
+                                android:background="@drawable/border_back"
+                                android:orientation="horizontal">
+                                <Spinner
+                                    android:id="@+id/debit_or_credit"
+                                    android:backgroundTint="@color/white"
+                                    android:layout_centerVertical="true"
+                                    android:theme="@style/MatchSpinnerTheme"
+                                    android:background="@android:color/transparent"
+                                    android:layout_width="90dp"
+                                    android:spinnerMode="dropdown"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+                                </Spinner>
+
+                                <Button
+                                    android:layout_width="31dp"
+                                    android:layout_height="27dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginRight="4dp"
+                                    android:clickable="false"
+                                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:backgroundTint="@color/white" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/start_date"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:id="@+id/show_monthly_transaction"
+                        android:gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:background="@drawable/editback2"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:backgroundTint="#BE7B089B"
+                            android:layout_height="match_parent">
+                            <RelativeLayout
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="#BE7B089B"
+                                android:background="@drawable/border_back"
+                                android:orientation="horizontal">
+                                <Spinner
+                                    android:id="@+id/month"
+                                    android:backgroundTint="@color/white"
+                                    android:layout_centerVertical="true"
+                                    android:theme="@style/MatchSpinnerTheme"
+                                    android:background="@android:color/transparent"
+                                    android:layout_width="140dp"
+                                    android:spinnerMode="dropdown"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+                                </Spinner>
+
+                                <Button
+                                    android:layout_width="31dp"
+                                    android:layout_height="27dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginRight="4dp"
+                                    android:clickable="false"
+                                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:backgroundTint="@color/white" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:background="@drawable/editback2"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:backgroundTint="#BE86054C"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_width="140dp"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="#BE86054C"
+                                android:background="@drawable/border_back"
+                                android:orientation="horizontal">
+                                <Spinner
+                                    android:id="@+id/year"
+                                    android:backgroundTint="@color/white"
+                                    android:layout_centerVertical="true"
+                                    android:theme="@style/MatchSpinnerTheme"
+                                    android:background="@android:color/transparent"
+                                    android:layout_width="130dp"
+                                    android:spinnerMode="dropdown"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+                                </Spinner>
+
+                                <Button
+                                    android:layout_width="31dp"
+                                    android:layout_height="27dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginRight="4dp"
+                                    android:clickable="false"
+                                    android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:backgroundTint="@color/white" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/show_yearly_transaction"
+                        android:gravity="right"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/editback2"
+                        android:backgroundTint="#D2078EA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#D2078EA0"
+                            android:background="@drawable/border_back"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:id="@+id/year2"
+                                android:backgroundTint="@color/white"
+                                android:layout_centerVertical="true"
+                                android:theme="@style/MatchSpinnerTheme"
+                                android:background="@android:color/transparent"
+                                android:layout_width="130dp"
+                                android:spinnerMode="dropdown"
+                                android:gravity="center"
+                                android:layout_height="match_parent">
+                            </Spinner>
+
+                            <Button
+                                android:layout_width="31dp"
+                                android:layout_height="27dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginRight="4dp"
+                                android:clickable="false"
+                                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                                android:backgroundTint="@color/white" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/show_daily_transaction"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:weightSum="3"
                         android:background="@drawable/editback2"
-                        android:backgroundTint="#E24E13A0"
+                        android:backgroundTint="#CE9B1605"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent">
                         <TextView
-                            android:text="Start"
+                            android:text="Day"
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:layout_width="wrap_content"
@@ -195,7 +296,7 @@
                             android:layout_height="0dp">
                         </TextView>
                         <TextView
-                            android:id="@+id/start"
+                            android:id="@+id/day"
                             android:text="12.12.2010"
                             android:gravity="center"
                             android:textColor="@color/white"
@@ -212,47 +313,92 @@
                         </Button>
                     </LinearLayout>
                     <LinearLayout
-                        android:id="@+id/end_date"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/show_all_transaction"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:weightSum="3"
-                        android:background="@drawable/editback2"
-                        android:backgroundTint="#E4753607"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent">
-                        <TextView
-                            android:text="End"
+
+                        <LinearLayout
+                            android:id="@+id/start_date"
+                            android:layout_marginLeft="10dp"
                             android:gravity="center"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_height="0dp">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/end"
-                            android:text="12.12.2010"
+                            android:orientation="vertical"
+                            android:weightSum="3"
+                            android:background="@drawable/editback2"
+                            android:backgroundTint="#E24E13A0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:text="Start"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="0dp">
+                            </TextView>
+                            <TextView
+                                android:id="@+id/start"
+                                android:text="12.12.2010"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="0dp">
+                            </TextView>
+                            <Button
+                                android:background="@drawable/dropdown"
+                                android:layout_width="30dp"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:layout_height="0dp">
+                            </Button>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/end_date"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
                             android:gravity="center"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_height="0dp">
-                        </TextView>
-                        <Button
-                            android:clickable="false"
-                            android:background="@drawable/dropdown"
-                            android:layout_width="30dp"
-                            android:layout_weight="1"
-                            android:layout_height="0dp">
-                        </Button>
+                            android:orientation="vertical"
+                            android:weightSum="3"
+                            android:background="@drawable/editback2"
+                            android:backgroundTint="#E4753607"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:text="End"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="0dp">
+                            </TextView>
+                            <TextView
+                                android:id="@+id/end"
+                                android:text="12.12.2010"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="0dp">
+                            </TextView>
+                            <Button
+                                android:clickable="false"
+                                android:background="@drawable/dropdown"
+                                android:layout_width="30dp"
+                                android:layout_weight="1"
+                                android:layout_height="0dp">
+                            </Button>
+                        </LinearLayout>
                     </LinearLayout>
+
                 </LinearLayout>
 
-            </LinearLayout>
-
+            </HorizontalScrollView>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

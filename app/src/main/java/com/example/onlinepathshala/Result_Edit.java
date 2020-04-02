@@ -33,6 +33,7 @@ public class Result_Edit extends AppCompatActivity {
     ProgressDialog progressDialog;
     String id="";
     Button submit;
+    boolean valid=true;
     ArrayList<Result_Info2> result_info2=new ArrayList<>();
     String student_id="",student_name="",subject_name="",total_marks="",subjective_total="",objective_total="",practical_total="",obtain_subjective="",obtain_objective="",obtain_practical="",weight="";
     EditText et_student_id,et_student_name,et_subject_name,et_total_marks,et_subjective_total,et_objective_total,et_practical_total,et_obtain_subjective,et_obtain_objective,et_obtain_practical,et_weight;
@@ -56,7 +57,7 @@ public class Result_Edit extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                valid=true;
                 student_id=et_student_id.getText().toString();
                 student_name=et_student_name.getText().toString();
                 subject_name=et_subject_name.getText().toString();
@@ -65,13 +66,13 @@ public class Result_Edit extends AppCompatActivity {
                 objective_total=et_objective_total.getText().toString();
                 practical_total=et_practical_total.getText().toString();
                 obtain_subjective=et_obtain_subjective.getText().toString();
-                obtain_objective=et_objective_total.getText().toString();
+                obtain_objective=et_obtain_objective.getText().toString();
                 obtain_practical=et_obtain_practical.getText().toString();
                 weight=et_weight.getText().toString();
 
                 if(student_id.length()>0&&student_name.length()>0&&subject_name.length()>0&&total_marks.length()>0&&subjective_total.length()>0&&objective_total.length()>0&&practical_total.length()>0&&obtain_subjective.length()>0&&obtain_objective.length()>0&&obtain_practical.length()>0&&weight.length()>0){
 
-                    submit();
+                    check_marks_validity();
                 }
                 else{
 
@@ -83,6 +84,69 @@ public class Result_Edit extends AppCompatActivity {
         progressDialog=new ProgressDialog(Result_Edit.this);
         getAllData();
 
+    }
+
+    public void check_marks_validity(){
+
+        double obtain_mark_subjective2=Double.parseDouble(obtain_subjective);
+        double obtain_mark_objective2=Double.parseDouble(obtain_objective);
+        double obtain_marks_practical2=Double.parseDouble(obtain_practical);
+        double total_subjective2=Double.parseDouble(subjective_total);
+        double total_objective2=Double.parseDouble(objective_total);
+        double total_practical2=Double.parseDouble(practical_total);
+        double total_obtain=obtain_mark_subjective2+obtain_mark_objective2+obtain_marks_practical2;
+
+        String message="";
+        if(obtain_mark_subjective2>total_subjective2){
+
+            valid=false;
+            message+="Obtain Marks In Subjective Can Not Be Greater Than Total Subjective Marks\n";
+        }
+        if(obtain_mark_objective2>total_objective2){
+
+            valid=false;
+            message+="Obtain Marks In Objective Can Not Be Greater Than Total Objective Marks\n";
+        }
+        if(obtain_marks_practical2>total_practical2){
+
+            valid=false;
+            message+="Obtain Marks In Practical Can Not Be Greater Than Total Practical Marks\n";
+        }
+        double total_mark=total_subjective2+total_objective2+total_practical2;
+        double total=Double.parseDouble(total_marks);
+        if(total_mark>total){
+
+            valid=false;
+            message+="Sum Of (subjective_total,objective_total,practical_total) Can Not Be Greater Than Total Marks\n";
+        }
+        if(total_obtain>total){
+
+            valid=false;
+            message+="Obtain Marks Can Not Be Greater Than Total Marks\n";
+        }
+
+        if(valid){
+
+            submit();
+        }
+        else{
+
+            showMessage( message);
+        }
+    }
+    public void showMessage(String message){
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(Result_Edit.this);
+        builder.setTitle("Error in Result Data");
+        builder.setMessage(message);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.show();
     }
 
     public void showMessage(){

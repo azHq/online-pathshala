@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Final_Result_View_For_All">
+
+    <LinearLayout
+        android:background="#39056D"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1">
+            <EditText
+                android:id="@+id/search"
+                android:textSize="12sp"
+                android:paddingStart="10dp"
+                android:gravity="center_vertical"
+                android:fontFamily="serif"
+                android:imeOptions="flagNoExtractUi|actionNext"
+                android:hint="Search Student"
+                android:background="@drawable/edit_back3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </EditText>
+            <Button
+                android:id="@+id/search_btn"
+                android:backgroundTint="#39056D"
+                android:background="@drawable/search"
+                android:layout_alignParentEnd="true"
+                android:layout_width="25dp"
+                android:layout_margin="8dp"
+                android:layout_height="match_parent">
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/subject_layout"
+            android:layout_width="0dp"
+            android:layout_weight=".9"
+            android:layout_margin="10dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_below="@+id/time"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_back3"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/subject_sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:theme="@style/MySpinner"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/duration_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:layout_margin="10dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_below="@+id/time"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_back3"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/search_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:theme="@style/MySpinner"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section_or_class_layout"
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_margin="10dp"
+            android:textColorHint="#1D5A8F"
+            android:layout_below="@+id/time"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_back3"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_search_type2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:theme="@style/MySpinner"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/exam_type"
+                    android:layout_marginLeft="20dp"
+                    android:text="Monthly Exam"
+                    android:textColor="@color/blue"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/date"
+                    android:layout_marginLeft="20dp"
+                    android:text="12.12.2020"
+                    android:textColor="@color/blue"
+                    android:gravity="center_horizontal|top"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="end|center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="140dp"
+                    android:layout_marginRight="20dp"
+                    android:textColorHint="#1D5A8F"
+                    android:layout_height="40dp"
+                    android:background="@drawable/editback2"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:theme="@style/MySpinner"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                </RelativeLayout>
+                <Button
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/download_pdf"
+                    android:layout_gravity="center_vertical"
+                    android:text="Download CSV"
+                    android:textSize="12sp"
+                    android:background="@drawable/editback2"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp">
+                </Button>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/result1"
+        android:visibility="visible"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/table_border"
+            android:orientation="vertical"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Student Id"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Student Name"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Subject Name"
+                    android:layout_weight="1"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle1"
+                android:focusable="true"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:background="@drawable/table_border4"
+                        android:orientation="horizontal"
+                        android:layout_width="800dp"
+                        android:layout_height="40dp">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:text="Total Marks"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/table_cell"
+                                android:textColor="@color/table_header_text_color"
+                                android:textSize="@dimen/table_header_text_size"
+                                android:textAppearance="@style/table_header_text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                            </TextView>
+                            <TextView
+                                android:text="Highest Marks"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/table_cell"
+                                android:textColor="@color/table_header_text_color"
+                                android:textSize="@dimen/table_header_text_size"
+                                android:textAppearance="@style/table_header_text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                            </TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            android:layout_weight="3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:text="Obtain Marks"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/table_cell"
+                                android:textColor="@color/table_header_text_color"
+                                android:textSize="@dimen/table_header_text_size"
+                                android:textAppearance="@style/table_header_text_style"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+                            </TextView>
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:weightSum="4"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:text="Class Test"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell"
+                                    android:textColor="@color/table_header_text_color"
+                                    android:textSize="@dimen/table_header_text_size"
+                                    android:textAppearance="@style/table_header_text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent">
+                                </TextView>
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:text="Monthly Test"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell"
+                                    android:textColor="@color/table_header_text_color"
+                                    android:textSize="@dimen/table_header_text_size"
+                                    android:textAppearance="@style/table_header_text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent">
+                                </TextView>
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:text="Half Yearly"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell"
+                                    android:textColor="@color/table_header_text_color"
+                                    android:textSize="@dimen/table_header_text_size"
+                                    android:textAppearance="@style/table_header_text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent">
+                                </TextView>
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:text="Final"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell"
+                                    android:textColor="@color/table_header_text_color"
+                                    android:textSize="@dimen/table_header_text_size"
+                                    android:textAppearance="@style/table_header_text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent">
+                                </TextView>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView
+                            android:text="Total"
+                            android:gravity="center"
+                            android:background="@drawable/table_cell"
+                            android:textColor="@color/table_header_text_color"
+                            android:textSize="@dimen/table_header_text_size"
+                            android:textAppearance="@style/table_header_text_style"
+                            android:layout_weight=".8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                        </TextView>
+                        <TextView
+                            android:text="LP"
+                            android:gravity="center"
+                            android:background="@drawable/table_cell"
+                            android:textColor="@color/table_header_text_color"
+                            android:textSize="@dimen/table_header_text_size"
+                            android:textAppearance="@style/table_header_text_style"
+                            android:layout_weight=".5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                        </TextView>
+                        <TextView
+                            android:text="GP"
+                            android:gravity="center"
+                            android:background="@drawable/table_cell"
+                            android:textColor="@color/table_header_text_color"
+                            android:textSize="@dimen/table_header_text_size"
+                            android:textAppearance="@style/table_header_text_style"
+                            android:layout_weight=".5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                        </TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycle"
+                            android:scrollbars="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/result2"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/table_border"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="6"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Student Id"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Student Name"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Total Marks"
+                    android:layout_weight="1"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Highest Marks"
+                    android:layout_weight="1"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Total Obtain Marks"
+                    android:layout_weight="1"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="Posistion"
+                    android:layout_weight="1"
+                    android:textColor="@color/table_header_text_color"
+                    android:textSize="@dimen/table_header_text_size"
+                    android:gravity="center"
+                    android:background="@drawable/table_cell"
+                    android:layout_width="0dp"
+                    android:textAppearance="@style/table_header_text_style"
+                    android:layout_height="40dp"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle2"
+                android:focusable="true"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

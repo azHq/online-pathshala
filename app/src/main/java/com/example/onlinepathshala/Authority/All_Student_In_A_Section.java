@@ -67,7 +67,7 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
     AlertDialog alertDialog,alertDialog2;
     TextView no_item;
     FloatingActionButton dragView;
-    public String section_id="",class_id="";
+    public String section_id="",class_id="",class_name,section_name,medium_name;
     float posX=0;
     float posY=0;
     Button delete;
@@ -76,8 +76,10 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
     boolean show_checkbox=false,checked_all=false;
     ArrayList<String> student_ids=new ArrayList<>();
     EditText et_search;
+    Button search_btn;
+    String search_string;
     ArrayList<Student2> search_list=new ArrayList<>();
-
+    TextView tv_class_name,tv_section_name,tv_medium_name,total_student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,9 +90,21 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
         et_search=findViewById(R.id.search);
         section_id=getIntent().getStringExtra("section_id");
         class_id=getIntent().getStringExtra("class_id");
+        class_name=getIntent().getStringExtra("class_name");
+        section_name=getIntent().getStringExtra("section_name");
+        medium_name=getIntent().getStringExtra("medium_name");
         recyclerView=findViewById(R.id.recycle);
         delete=findViewById(R.id.delete);
         select_all=findViewById(R.id.select_all);
+
+        tv_class_name=findViewById(R.id.class_name);
+        tv_section_name=findViewById(R.id.section_name);
+        tv_medium_name=findViewById(R.id.medium);
+        total_student=findViewById(R.id.total_student);
+
+        tv_class_name.setText("Class : "+class_name);
+        tv_section_name.setText("Section : "+section_name);
+        tv_medium_name.setText("Medium : "+medium_name);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,6 +152,8 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
             }
         });
 
+        et_search=findViewById(R.id.search);
+        search_btn=findViewById(R.id.search_btn);
         et_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -148,8 +164,10 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
 
+                search_string=charSequence.toString();
+                set_search_match_item(charSequence.toString(),1);
 
-                    set_search_match_item(charSequence.toString());
+
 
 
             }
@@ -159,6 +177,16 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
 
             }
         });
+        search_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                set_search_match_item(search_string,2);
+
+            }
+        });
+
 
         progressDialog=new ProgressDialog(All_Student_In_A_Section.this);
         progressDialog.setMessage("Please Wait.....");
@@ -166,7 +194,7 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
         getAllMemberData();
     }
 
-    public void set_search_match_item(String search_string){
+    public void set_search_match_item(String search_string,int condition){
 
         search_string=search_string.toLowerCase();
         search_list.clear();
@@ -174,15 +202,26 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
 
             String id=student2.id.toLowerCase();
             String name=student2.name.toLowerCase();
-            if(id.contains(search_string)||name.contains(search_string)){
 
-                search_list.add(student2);
+            if(condition==1){
+                if(id.contains(search_string)||name.contains(search_string)){
+
+                    search_list.add(student2);
+                }
             }
+            else if(condition==2){
+                if(id.equalsIgnoreCase(search_string)||name.equalsIgnoreCase(search_string)){
+
+                    search_list.add(student2);
+                }
+            }
+
 
         }
         recycleAdapter=new RecycleAdapter(search_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(recycleAdapter);
+
 
     }
 
@@ -248,7 +287,7 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
                                         e.printStackTrace();
                                     }
                                 }
-
+                                total_student.setText("Total Students : "+memberInfos.size() );
                                 no_item.setVisibility(View.GONE);
                                 recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -256,7 +295,7 @@ public class All_Student_In_A_Section extends AppCompatActivity implements View.
                                 progressDialog.dismiss();
                             }
                             else{
-
+                                total_student.setText("Total Students : "+memberInfos.size() );
                                 no_item.setVisibility(View.VISIBLE);
                                 recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

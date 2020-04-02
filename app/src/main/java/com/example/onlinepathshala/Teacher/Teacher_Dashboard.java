@@ -3,7 +3,6 @@ package com.example.onlinepathshala.Teacher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.view.GravityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,17 +25,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.example.onlinepathshala.Accountant.Accountant_Contact;
 import com.example.onlinepathshala.Accountant.Notice_View;
 import com.example.onlinepathshala.Admin.Log_In;
-import com.example.onlinepathshala.Authority.View_Result;
+import com.example.onlinepathshala.Authority.Result_Form_Configuration2;
 import com.example.onlinepathshala.Constant_URL;
 import com.example.onlinepathshala.MainActivity;
-import com.example.onlinepathshala.Notification;
 import com.example.onlinepathshala.R;
 import com.example.onlinepathshala.SharedPrefManager;
-import com.example.onlinepathshala.Student.Contact;
-import com.example.onlinepathshala.Student.My_Classes;
 import com.example.onlinepathshala.VolleySingleton;
 
 import org.json.JSONArray;
@@ -45,9 +40,6 @@ import org.json.JSONException;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
@@ -55,8 +47,8 @@ public class Teacher_Dashboard extends AppCompatActivity {
 
     public static int num_notificatio=0;
     RecyclerView recyclerView;
-    int[][] image_path={{R.drawable.male_profile,R.drawable.hometask},{R.drawable.result3,R.drawable.notice2},{R.drawable.attendence,R.drawable.result3},{R.drawable.result3,R.drawable.result3},{R.drawable.routine,R.drawable.contact3},{R.drawable.transaction3,R.drawable.notice2}};
-    String[][] name={{"Profile","Home Task"},{"My Classes","Notice"},{"Attendance","Attendance History"},{"Publish Result","View Result"},{"Routine","Contact"},{"Transaction","Notice"}};
+    int[][] image_path={{R.drawable.male_profile,R.drawable.hometask},{R.drawable.result3,R.drawable.my_student},{R.drawable.attendence,R.drawable.result3},{R.drawable.result3,R.drawable.result3},{R.drawable.routine,R.drawable.contact3},{R.drawable.transaction3,R.drawable.notice2}};
+    String[][] name={{"Profile","Home Task"},{"My Classes","My Students"},{"Attendance","Attendance History"},{"Publish Result","View Result"},{"Routine","Contact"},{"Transaction","Notice"}};
     AlertDialog alertDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +126,7 @@ public class Teacher_Dashboard extends AppCompatActivity {
                     }
                     else if(position==3){
 
-                        startActivity(new Intent(getApplicationContext(),Result_Form_Configuration.class));
+                        startActivity(new Intent(getApplicationContext(), Result_Form_Configuration.class));
 
                     }
                     else if(position==4){
@@ -148,7 +140,6 @@ public class Teacher_Dashboard extends AppCompatActivity {
 
                 }
             });
-            if(position==5) holder.card2.setVisibility(GONE);
             holder.card2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -161,7 +152,7 @@ public class Teacher_Dashboard extends AppCompatActivity {
                     }
                     else if(position==1){
 
-                        startActivity(new Intent(getApplicationContext(), Notice_View.class));
+                        startActivity(new Intent(getApplicationContext(), My_Students.class));
 
                     }
                     else if(position==2){
@@ -172,7 +163,7 @@ public class Teacher_Dashboard extends AppCompatActivity {
                     }
                     else if(position==3){
 
-                        startActivity(new Intent(getApplicationContext(), View_Result2.class));
+                        startActivity(new Intent(getApplicationContext(), View_Result2_Form_Config.class));
 
                     }
                     else if(position==4){
@@ -181,7 +172,8 @@ public class Teacher_Dashboard extends AppCompatActivity {
 
                     }
                     else if(position==5){
-                        holder.card2.setVisibility(GONE);
+
+                        startActivity(new Intent(getApplicationContext(), Notice_View.class));
                     }
                 }
             });

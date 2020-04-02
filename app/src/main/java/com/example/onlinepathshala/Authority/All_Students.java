@@ -79,14 +79,15 @@ public class All_Students extends Fragment {
     int lastAction;
     Spinner sp_medium,sp_class,sp_section;
     String medium="Bangla",class_id="",section_id="";
-    TextView no_item;
+    TextView no_item,tv_total_student;
     Button delete;
     CheckBox select_all;
     boolean show_checkbox=false,checked_all=false;
     EditText et_search;
     ArrayList<String> student_ids=new ArrayList<>();
     ArrayList<Student2> search_list=new ArrayList<>();
-
+    Button search_btn;
+    String search_string;
     public All_Students() {
 
     }
@@ -108,7 +109,7 @@ public class All_Students extends Fragment {
         no_item=view.findViewById(R.id.no_item);
         delete=view.findViewById(R.id.delete);
         select_all=view.findViewById(R.id.select_all);
-        et_search=view.findViewById(R.id.search);
+        tv_total_student=view.findViewById(R.id.total_student);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,6 +157,8 @@ public class All_Students extends Fragment {
             }
         });
 
+        et_search=view.findViewById(R.id.search);
+        search_btn=view.findViewById(R.id.search_btn);
         et_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -166,14 +169,25 @@ public class All_Students extends Fragment {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
 
+                search_string=charSequence.toString();
+                set_search_match_item(charSequence.toString(),1);
 
-                set_search_match_item(charSequence.toString());
+
 
 
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        search_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                set_search_match_item(search_string,2);
 
             }
         });
@@ -231,7 +245,7 @@ public class All_Students extends Fragment {
     }
 
 
-    public void set_search_match_item(String search_string){
+    public void set_search_match_item(String search_string,int condition){
 
         search_string=search_string.toLowerCase();
         search_list.clear();
@@ -239,17 +253,29 @@ public class All_Students extends Fragment {
 
             String id=student2.id.toLowerCase();
             String name=student2.name.toLowerCase();
-            if(id.contains(search_string)||name.contains(search_string)){
 
-                search_list.add(student2);
+            if(condition==1){
+                if(id.contains(search_string)||name.contains(search_string)){
+
+                    search_list.add(student2);
+                }
             }
+            else if(condition==2){
+                if(id.equalsIgnoreCase(search_string)||name.equalsIgnoreCase(search_string)){
+
+                    search_list.add(student2);
+                }
+            }
+
 
         }
         recycleAdapter=new RecycleAdapter(search_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(recycleAdapter);
 
+
     }
+
 
     public void select_all_student(){
         student_ids.clear();
@@ -493,6 +519,7 @@ public class All_Students extends Fragment {
                                     }
                                 }
 
+                                tv_total_student.setText("Total Students : "+memberInfos.size() );
                                 no_item.setVisibility(View.GONE);
                                recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -500,7 +527,7 @@ public class All_Students extends Fragment {
                                 progressDialog.dismiss();
                             }
                             else{
-
+                                tv_total_student.setText("Total Students : "+memberInfos.size() );
                                 no_item.setVisibility(View.VISIBLE);
                                 recycleAdapter=new RecycleAdapter(memberInfos);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

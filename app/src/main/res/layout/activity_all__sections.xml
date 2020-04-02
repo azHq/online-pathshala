@@ -7,7 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".Authority.All_Sections">
 
-
+    <LinearLayout
+        android:weightSum="2"
+        android:background="#10047C"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/medium"
+            android:gravity="center"
+            android:text="Medium:Bangla"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/class_name"
+            android:gravity="center"
+            android:text="Class:Ten"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
